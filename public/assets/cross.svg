@@ -1,0 +1,29 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302.33 302.33">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle id="circle" class="cls-1" cx="151.17" cy="151.17" r="151.17"/>
+    <g>
+      <g id="arrow">
+        <line class="cls-2" x1="80.49" y1="71.77" x2="151.17" y2="150.55"/>
+        <line class="cls-2" x1="221.85" y1="71.77" x2="151.17" y2="150.55"/>
+      </g>
+      <g id="arrow-2" data-name="arrow">
+        <line class="cls-2" x1="80.49" y1="230.57" x2="151.17" y2="151.78"/>
+        <line class="cls-2" x1="221.85" y1="230.57" x2="151.17" y2="151.78"/>
+      </g>
+    </g>
+  </g>
+</svg>

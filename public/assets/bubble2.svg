@@ -1,0 +1,51 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 304 304">
+  <defs>
+    <style>
+      .backgroung {
+        fill: #ee82ee;
+        fill:var(--bubble-color);
+        opacity:.3
+      }
+
+      
+      .line {
+        fill: none;
+        stroke: #050303;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .bubble-body {
+        fill: #ee82ee;
+        fill:var(--bubble-color);
+        transition: fill .5s;
+        stroke: #050303;
+        stroke-width: 3px;
+        stroke-miterlimit: 10;
+        opacity:.3;
+        
+      }
+
+      .reflection {
+        fill: #fff;
+        fill-rule: evenodd;
+        opacity:.4
+      }
+    </style>
+  </defs>
+  <g id="bubbleSprit">
+    <g id="explosion" class="bubble-part hide">
+      <path class="backgroung" d="M130.64,240.12c13.78-75.58-10.29-110.49-85.6-96.84,0,0,54-9,4.55-37.43,67.2,36.64,101,11.07,111.72-65,0,0-3.86,49.58,21.73,10.45C150.37,120.5,177.86,152.78,254.43,159c0,0-62.07-2.44,6.28,22.25C188.1,156.18,149.94,174.66,152,251.17,152,251.17,149.92,176.24,130.64,240.12Z"/>
+      <g id="lines">
+        <path class="line" d="M49.59,105.85c67.2,36.64,101,11.07,111.72-65"/>
+        <path class="line" d="M183,51.29C150.37,120.5,177.86,152.78,254.43,159"/>
+        <path class="line" d="M45,143.28c75.31-13.65,99.38,21.26,85.6,96.84"/>
+        <path class="line" d="M152,251.17c-2-76.51,36.13-95,108.74-69.88"/>
+      </g>
+    </g>
+    <g id="bubble" class="bubble-part">
+    <path id="body" class="bubble-body" d="M298.21,152.62c5,54-26.48,101.47-72.16,126.58-22.14,19-47.29,19-73.43,19a145.1,145.1,0,0,1-99.8-39.59C20,236.51,7,194.4,7,152.62A145,145,0,0,1,40.27,60C60.87,22.74,107.39,7,152.62,7c37.16,0,76.1,8.45,100.8,30.65C282.16,63.51,294,106.44,298.21,152.62Z"/>
+    <path class="reflection" d="M76.8,106.42C97.35,69.86,129,44,163.76,31.49,119.47,22.06,70.11,45.14,44.33,91,17.37,139,25.11,196,60,228.36,49.76,190,54.58,145.94,76.8,106.42Z"/>
+    </g>
+  </g>
+</svg>
