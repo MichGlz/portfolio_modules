@@ -1,0 +1,13 @@
+<svg id="Layer_1_copy_Image" data-name="Layer 1 copy Image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 540.93 720">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f7f7f7;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="186.3" y="283.29" width="194.69" height="50.36" rx="2.33"/>
+  <image id="left-eye_Image" class="eyeball" data-name="left-eye Image" width="138" height="131" transform="translate(222.44 289.82) scale(0.23 0.23)" xlink:href="assets/Artboard%2011.png"/>
+  <image id="right-eye_Image" class="eyeball" data-name="right-eye Image" width="138" height="131" transform="translate(327.12 298.21) scale(0.23 0.23)" xlink:href="assets/Artboard%2012.png"/>
+  <image id="Layer_1_copy_Image-2" data-name="Layer 1 copy Image" width="2320" height="3088" transform="scale(0.23 0.23)" xlink:href="assets/Artboard%2013.png"/>
+</svg>
