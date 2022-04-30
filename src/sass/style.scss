@@ -54,19 +54,18 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-}
 
-.svg-container-wrapper {
-  width: 50%;
-  min-width: 350px;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: violet; */
-  padding: 3rem 0;
+  .svg-container-wrapper {
+    width: 50%;
+    min-width: 350px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: violet; */
+    padding: 3rem 0;
+  }
 }
-
 .svg-container {
   width: max(30vh, calc(25vw * var(--factor)));
   height: max(30vh, calc(25vw * var(--factor)));
