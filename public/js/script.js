@@ -184,6 +184,8 @@ function callSection(e) {
 
   const copy = template.cloneNode(true);
 
+  // copy.style.opacity = 0;
+
   const parent = document.querySelector(".sliding-sections-container");
 
   parent.appendChild(copy);
@@ -250,7 +252,7 @@ function callSection(e) {
   };
 
   const keyframes = [
-    { transformOrigin: "center", transform: `translateY(-100%)`, opacity: 0.3 },
+    { transformOrigin: "center", transform: `translateY(-100%)`, opacity: 0 },
     {
       transformOrigin: "center",
       transform: `translateY(0)`,
