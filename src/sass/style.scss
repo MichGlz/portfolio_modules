@@ -107,6 +107,7 @@ section {
   font-size: calc(2rem + calc(2vw * var(--factor)));
   text-align: center;
   box-shadow: var(--soft-shodow);
+  color: var(--body-color);
 }
 
 .box:focus {
@@ -523,6 +524,8 @@ section > .btn-close:hover {
   border: none;
   box-shadow: var(--soft-shodow);
   transition: transform 0.3s;
+  background-color: var(--whiteOff);
+  color: var(--body-color);
 }
 
 #form-email button:hover {
