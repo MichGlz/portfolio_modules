@@ -7,7 +7,6 @@ import checkIsMobile from "./modules/check_isMobile.js";
 import { closeEyes, openEyes, eyeMove } from "./modules/eyes_actions.js";
 
 const root = document.documentElement;
-const isMobile = checkIsMobile();
 
 window.addEventListener("resize", () => {
   windowWidth(root);
@@ -40,7 +39,7 @@ const bubbleSettings = {
 const body = document.querySelector("body");
 const orangeToggle = document.querySelector("#orange-mode");
 
-if (!isMobile) {
+if (checkIsMobile()) {
   body.addEventListener("mousedown", closeEyes);
   body.addEventListener("mouseup", openEyes);
   body.addEventListener("mousemove", eyeMove);
