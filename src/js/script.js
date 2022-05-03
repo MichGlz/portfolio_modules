@@ -253,7 +253,7 @@ function callSection(e) {
     { transformOrigin: "center", transform: `translateY(-100%)`, opacity: 0.3 },
     {
       transformOrigin: "center",
-      transform: `none`,
+      transform: `translateY(0)`,
       opacity: 1,
     },
   ];
