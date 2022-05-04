@@ -6,15 +6,19 @@ import fetchFace from "./modules/fetch_face.js";
 import checkIsMobile from "./modules/check_isMobile.js";
 import { closeEyes, openEyes, eyeMove } from "./modules/eyes_actions.js";
 
-const root = document.documentElement;
-const isMobile = checkIsMobile();
+// const isMobile = checkIsMobile();
 
-window.addEventListener("resize", () => {
+window.addEventListener("load", startWeb);
+
+function startWeb() {
+  const root = document.documentElement;
+  window.addEventListener("resize", () => {
+    windowWidth(root);
+  });
   windowWidth(root);
-});
-
-windowWidth(root);
-fetchFace();
+  fetchFace();
+  console.log("page is fully loaded");
+}
 
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -40,7 +44,7 @@ const bubbleSettings = {
 const body = document.querySelector("body");
 const orangeToggle = document.querySelector("#orange-mode");
 
-if (!isMobile) {
+if (!checkIsMobile()) {
   body.addEventListener("mousedown", closeEyes);
   body.addEventListener("mouseup", openEyes);
   body.addEventListener("mousemove", eyeMove);
@@ -378,10 +382,10 @@ function faderMachine(faderClass) {
 function dobbleOpen() {
   const closeEyes = document.getElementById("close-eyes");
   const openEyes = document.getElementById("eyes");
-  closeEyes.classList = "eyes";
-  openEyes.classList = "eyes";
-  closeEyes.classList.add("hide");
-  openEyes.classList.add("active");
+  setTimeout(() => {
+    closeEyes.classList = "eyes";
+    openEyes.classList = "eyes";
+    closeEyes.classList.add("hide");
+    openEyes.classList.add("active");
+  }, 200);
 }
-
-dobbleOpen();
