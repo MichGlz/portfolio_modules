@@ -1,5 +1,5 @@
-@use "./root";
-@use "./default-style";
+@use "../sass/root";
+@use "../sass/default-style";
 
 .page-wrapper {
   max-width: 1700px;
@@ -101,7 +101,7 @@ section {
   background-color: transparent;
   transition: 0.2s;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: min(var(--border-radius), 2vw);
   font-family: var(--font-name);
   font-weight: 300;
   font-size: calc(2rem + calc(2vw * var(--factor)));
