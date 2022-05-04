@@ -374,3 +374,14 @@ function faderMachine(faderClass) {
     appearOnScroll.observe(fader);
   });
 }
+
+function dobbleOpen() {
+  const closeEyes = document.getElementById("close-eyes");
+  const openEyes = document.getElementById("eyes");
+  closeEyes.classList = "eyes";
+  openEyes.classList = "eyes";
+  closeEyes.classList.add("hide");
+  openEyes.classList.add("active");
+}
+
+dobbleOpen();
