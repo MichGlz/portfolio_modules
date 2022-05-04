@@ -253,10 +253,10 @@ function callSection(e) {
   };
 
   const keyframes = [
-    { transformOrigin: "center", transform: `translateY(-100%)`, opacity: 0 },
+    { transformOrigin: "center", transform: `translateY(0)`, opacity: 0 },
     {
       transformOrigin: "center",
-      transform: `translateY(0)`,
+      transform: `translateY(100%)`,
       opacity: 1,
     },
   ];
