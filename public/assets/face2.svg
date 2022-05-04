@@ -27,6 +27,7 @@
 
       circle.cls-9{
         fill:transparent;
+        fill:red;
       }
 
       .hide{

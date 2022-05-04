@@ -5,8 +5,6 @@ export default function fetchFace() {
     })
     .then(function (data) {
       document.querySelector(".svg-container").innerHTML = data;
-    })
-    .then(function () {
       const closeEyes = document.getElementById("close-eyes");
       const openEyes = document.getElementById("eyes");
       closeEyes.classList = "eyes";

@@ -10,14 +10,13 @@ import { closeEyes, openEyes, eyeMove } from "./modules/eyes_actions.js";
 
 window.addEventListener("load", startWeb);
 
-function startWeb() {
+function startWeb(e) {
   const root = document.documentElement;
   window.addEventListener("resize", () => {
     windowWidth(root);
   });
   windowWidth(root);
   fetchFace();
-  console.log("page is fully loaded");
 }
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -44,11 +43,11 @@ const bubbleSettings = {
 const body = document.querySelector("body");
 const orangeToggle = document.querySelector("#orange-mode");
 
-// if (!checkIsMobile()) {
-body.addEventListener("mousedown", closeEyes);
-body.addEventListener("mouseup", openEyes);
-body.addEventListener("mousemove", eyeMove);
-
+if (!checkIsMobile()) {
+  body.addEventListener("mousedown", closeEyes);
+  body.addEventListener("mouseup", openEyes);
+  body.addEventListener("mousemove", eyeMove);
+}
 document.addEventListener("scroll", scrollingChanges);
 document.querySelectorAll(".box").forEach((box) => box.addEventListener("click", callSection));
 
