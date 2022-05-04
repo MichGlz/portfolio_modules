@@ -9,9 +9,8 @@ import { closeEyes, openEyes, eyeMove } from "./modules/eyes_actions.js";
 // const isMobile = checkIsMobile();
 
 window.addEventListener("load", startWeb);
-
+const root = document.documentElement;
 function startWeb(e) {
-  const root = document.documentElement;
   window.addEventListener("resize", () => {
     windowWidth(root);
   });

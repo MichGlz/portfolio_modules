@@ -22,12 +22,12 @@
       .eyeball{
         transform-box: fill-box;
         transform-origin:50% 50%;
-        <!-- transform:rotate(50deg); -->
+        transform:rotate(50deg);
       }
 
       circle.cls-9{
         fill:transparent;
-        fill:red;
+        
       }
 
       .hide{
