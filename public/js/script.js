@@ -44,11 +44,10 @@ const bubbleSettings = {
 const body = document.querySelector("body");
 const orangeToggle = document.querySelector("#orange-mode");
 
-if (!checkIsMobile()) {
-  body.addEventListener("mousedown", closeEyes);
-  body.addEventListener("mouseup", openEyes);
-  body.addEventListener("mousemove", eyeMove);
-}
+// if (!checkIsMobile()) {
+body.addEventListener("mousedown", closeEyes);
+body.addEventListener("mouseup", openEyes);
+body.addEventListener("mousemove", eyeMove);
 
 document.addEventListener("scroll", scrollingChanges);
 document.querySelectorAll(".box").forEach((box) => box.addEventListener("click", callSection));
