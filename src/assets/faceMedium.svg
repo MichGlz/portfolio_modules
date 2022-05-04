@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 220 292.76">
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: #f7f7f7;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1_copy_Image" data-name="Layer 1 copy Image"/>
+  <g id="Layer_2" data-name="Layer 2">
+    <g>
+      <rect class="cls-2" x="76.81" y="116.77" width="80.26" height="20.76" rx=".96" ry=".96"/>
+      <image id="left-eye_Image" data-name="left-eye Image" class="cls-1" transform="translate(91.71 119.46) scale(.09)" xlink:href="../../../KEA/work_files/portfolio/assets/Artboard11.png"/>
+      <image id="right-eye_Image" data-name="right-eye Image" class="cls-1" transform="translate(134.87 122.92) scale(.09)" xlink:href="../../../KEA/work_files/portfolio/assets/Artboard12.png"/>
+      <image id="Layer_1_copy_Image-2" data-name="Layer 1 copy Image-2" class="cls-1" transform="scale(.09)" xlink:href="../../../KEA/work_files/portfolio/assets/Artboard13.png"/>
+    </g>
+  </g>
+</svg>

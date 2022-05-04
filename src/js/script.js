@@ -376,13 +376,13 @@ function faderMachine(faderClass) {
   });
 }
 
-function dobbleOpen() {
-  const closeEyes = document.getElementById("close-eyes");
-  const openEyes = document.getElementById("eyes");
-  setTimeout(() => {
-    closeEyes.classList = "eyes";
-    openEyes.classList = "eyes";
-    closeEyes.classList.add("hide");
-    openEyes.classList.add("active");
-  }, 200);
-}
+// function dobbleOpen() {
+//   const closeEyes = document.getElementById("close-eyes");
+//   const openEyes = document.getElementById("eyes");
+//   setTimeout(() => {
+//     closeEyes.classList = "eyes";
+//     openEyes.classList = "eyes";
+//     closeEyes.classList.add("hide");
+//     openEyes.classList.add("active");
+//   }, 200);
+// }
