@@ -694,6 +694,13 @@ section > .btn-close:hover {
   opacity: 1;
 }
 
+// @media only screen and (max-width: 1000px) {
+//   .bubbles-container .links-SoMe {
+
+//     display: none;
+//   }
+// }
+
 @media only screen and (max-width: 450px) {
   body {
     background-size: unset;
@@ -729,10 +736,8 @@ section > .btn-close:hover {
   .quote-container p {
     font-size: 2rem;
   }
-}
 
-@media only screen and (max-width: 1000px) {
-  .bubbles-container .links-SoMe {
+  .on-mobile-No {
     display: none;
   }
 }
