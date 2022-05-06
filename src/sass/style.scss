@@ -694,6 +694,17 @@ section > .btn-close:hover {
   opacity: 1;
 }
 
+#spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // @media only screen and (max-width: 1000px) {
 //   .bubbles-container .links-SoMe {
 

@@ -275,7 +275,6 @@ function fetchProject() {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-
       data.forEach((p, i, arr) => {
         displayProject(p);
 
@@ -362,6 +361,10 @@ const appearOnScroll = new IntersectionObserver(function (entries, appearOnScrol
     if (!entry.isIntersecting) {
       return;
     } else {
+      const spinner = document.getElementById("#spinner");
+      if (spinner) {
+        spinner.remove();
+      }
       entry.target.classList.add("appear");
       appearOnScroll.unobserve(entry.target);
     }
