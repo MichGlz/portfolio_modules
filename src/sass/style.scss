@@ -220,12 +220,12 @@ h2 {
   --background: var(--background-color);
   height: 100%;
   padding: 2rem;
-  background: #252525;
+  background: var(--body-color);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow-y: scroll;
-  color: #f0f0f0;
+  color: var(--whiteOff);
 }
 
 .p-wrapper {
@@ -429,6 +429,10 @@ section > .btn-close:hover {
 
 .btn-close.invert {
   filter: invert(0);
+}
+
+.btn-close.sticky {
+  position: sticky;
 }
 
 .slideup {
@@ -703,6 +707,7 @@ section > .btn-close:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
 }
 
 // @media only screen and (max-width: 1000px) {
