@@ -479,6 +479,7 @@ section > .btn-close:hover {
 
 .bubble-sprit svg {
   pointer-events: none;
+  overflow: visible;
 }
 
 .contact {
@@ -738,6 +739,10 @@ section > .btn-close:hover {
   .projects-container {
     gap: 0;
     row-gap: 3rem;
+    & > p {
+      font-size: 5rem;
+      color: #f0f0f0;
+    }
   }
 
   .project-card {

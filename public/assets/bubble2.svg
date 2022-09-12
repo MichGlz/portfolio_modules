@@ -2,8 +2,8 @@
   <defs>
     <style>
       .backgroung {
-        fill: #ee82ee;
-        fill:var(--bubble-color);
+        <!-- fill: #ee82ee;
+        fill:var(bubble-color); -->
         opacity:.3
       }
 
@@ -16,14 +16,18 @@
       }
 
       .bubble-body {
-        fill: #ee82ee;
-        fill:var(--bubble-color);
+        <!-- fill: #ee82ee; -->
+        <!-- fill:var(bubble-color); -->
         transition: fill .5s;
         stroke: #050303;
         stroke-width: 3px;
         stroke-miterlimit: 10;
         opacity:.3;
         
+      }
+
+      .bubble-turn{
+        transform-origin:center;
       }
 
       .reflection {
@@ -44,7 +48,9 @@
       </g>
     </g>
     <g id="bubble" class="bubble-part">
+    <g class="bubble-turn">
     <path id="body" class="bubble-body" d="M298.21,152.62c5,54-26.48,101.47-72.16,126.58-22.14,19-47.29,19-73.43,19a145.1,145.1,0,0,1-99.8-39.59C20,236.51,7,194.4,7,152.62A145,145,0,0,1,40.27,60C60.87,22.74,107.39,7,152.62,7c37.16,0,76.1,8.45,100.8,30.65C282.16,63.51,294,106.44,298.21,152.62Z"/>
+    </g>
     <path class="reflection" d="M76.8,106.42C97.35,69.86,129,44,163.76,31.49,119.47,22.06,70.11,45.14,44.33,91,17.37,139,25.11,196,60,228.36,49.76,190,54.58,145.94,76.8,106.42Z"/>
     </g>
   </g>

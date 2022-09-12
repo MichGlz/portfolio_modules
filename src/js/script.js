@@ -123,6 +123,9 @@ function bubbleFactory(container) {
       })
       .then(function (data) {
         bubbleSprit.innerHTML = data;
+        const bubblecolor = randomColorGenerator();
+        bubbleSprit.querySelector(".bubble-body").style.fill = bubblecolor;
+        bubbleSprit.querySelector(".backgroung").style.fill = bubblecolor;
       });
 
     bubbleSprit.addEventListener("mouseover", explode);
@@ -132,11 +135,14 @@ function bubbleFactory(container) {
     const bubbleX = (container.getBoundingClientRect().width / 2) * 0.8;
 
     const durationNo = 10 * (Math.random() * 3) + 3;
+    const durationRatation = 4 + Math.random();
+    const scaleFactor = (Math.random() * 9) / 10;
 
     const t1 = gsap.timeline({ defaults: { delay: 0.2 * i }, onComplete: removeBubble, onCompleteParams: [`.bubble-${bubbleNumber}`] });
     t1.to(`.bubble-${bubbleNumber}`, { duration: durationNo, y: -1 * bubbleY, ease: "circ.out" });
     gsap.fromTo(`.bubble-${bubbleNumber}`, { x: -a * (Math.random() * 100) }, { duration: durationNo / 4, delay: 0.2 * i, ease: "slow(0.1, 0.4, true)", x: a * (Math.random() * bubbleX) });
-    gsap.to(`.bubble-${bubbleNumber}`, { rotation: 360, duration: 4 + Math.random(), ease: "none", repeat: 10 });
+    gsap.to(`.bubble-${bubbleNumber}`, { rotation: 360, duration: durationRatation, ease: "none", repeat: 10 });
+    gsap.fromTo(`.bubble-${bubbleNumber}`, { scale: 0.65 + scaleFactor }, { scale: 0.75 + scaleFactor, duration: durationNo, ease: "none" });
 
     function explode(e) {
       chekingScore();
