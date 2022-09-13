@@ -10,6 +10,7 @@ import { closeEyes, openEyes, eyeMove } from "./modules/eyes_actions.js";
 
 window.addEventListener("load", startWeb);
 const root = document.documentElement;
+
 function startWeb(e) {
   window.addEventListener("resize", () => {
     windowWidth(root);
@@ -53,12 +54,12 @@ document.querySelectorAll(".box").forEach((box) => box.addEventListener("click",
 orangeToggle.addEventListener("click", () => {
   if (orangeToggle.checked) {
     root.style.setProperty("--body-color", " #2d2926");
-    root.style.setProperty("--background-color", "#f2aa4c");
-    root.style.setProperty("--background-gradient", "radial-gradient(circle, rgba(242, 170, 76, 1) 56%, rgba(163, 118, 59, 1) 100%)");
-  } else {
-    root.style.setProperty("--body-color", " #2d2926");
     root.style.setProperty("--background-color", "#fff");
     root.style.setProperty("--background-gradient", "#fff");
+  } else {
+    root.style.setProperty("--body-color", " #2d2926");
+    root.style.setProperty("--background-color", "#f2aa4c");
+    root.style.setProperty("--background-gradient", "radial-gradient(circle, rgba(242, 170, 76, 1) 56%, rgba(163, 118, 59, 1) 100%)");
   }
 });
 

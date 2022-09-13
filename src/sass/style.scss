@@ -618,7 +618,7 @@ section > .btn-close:hover {
 }
 
 .switch {
-  --switch-color: var(--orange);
+  --switch-color: var(--whiteOff);
   position: relative;
   width: 4rem;
   height: 2rem;
@@ -642,7 +642,7 @@ section > .btn-close:hover {
 }
 
 #orange-mode:checked ~ .switch {
-  --switch-color: var(--whiteOff);
+  --switch-color: var(--orange);
 }
 
 #orange-mode:checked ~ .switch::before {
