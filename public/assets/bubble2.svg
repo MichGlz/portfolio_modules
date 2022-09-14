@@ -36,6 +36,7 @@
         opacity:.4
       }
     </style>
+    
   </defs>
   <g id="bubbleSprit">
     <g id="explosion" class="bubble-part hide">
