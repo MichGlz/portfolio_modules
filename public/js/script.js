@@ -55,10 +55,14 @@ orangeToggle.addEventListener("click", () => {
   if (orangeToggle.checked) {
     root.style.setProperty("--body-color", " #2d2926");
     root.style.setProperty("--background-color", "#fff");
+    root.style.setProperty("--background-color-80", "#ffffffcc");
+    root.style.setProperty("--background-color-40", "#ffffff66");
     root.style.setProperty("--background-gradient", "#fff");
   } else {
     root.style.setProperty("--body-color", " #2d2926");
     root.style.setProperty("--background-color", "#f2aa4c");
+    root.style.setProperty("--background-color-80", "#f2aa4ccc");
+    root.style.setProperty("--background-color-40", "#f2aa4c66");
     root.style.setProperty("--background-gradient", "radial-gradient(circle, rgba(242, 170, 76, 1) 56%, rgba(163, 118, 59, 1) 100%)");
   }
 });

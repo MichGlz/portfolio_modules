@@ -73,6 +73,9 @@ section {
   /* background-color: var(--background-color); */
   border-radius: 50%;
   border: solid 2px var(--body-color);
+  position: relative;
+  z-index: 2;
+  background-color: var(--background-color);
 }
 
 .svg-container svg {
@@ -108,6 +111,11 @@ section {
   text-align: center;
   box-shadow: var(--soft-shodow);
   color: var(--body-color);
+  z-index: 2;
+  /*glassmorphism*/
+  background: var(--background-color-80);
+  backdrop-filter: blur(2.3px);
+  -webkit-backdrop-filter: blur(2.3px);
 }
 
 .box:focus {
@@ -123,7 +131,7 @@ section {
   transform: scale(1);
   box-shadow: inset 0 0 2px 1px var(--body-color);
   border: solid 3px var(--body-color);
-  z-index: 0;
+  z-index: 2;
   background-color: var(--body-color);
   color: var(--background-color);
 }
@@ -139,7 +147,7 @@ h2 {
 
 #arrow {
   display: block;
-  position: absolute;
+  position: fixed;
   width: max(calc(3vw * var(--factor)), 3vh, 40px);
   height: max(calc(3vw * var(--factor)), 3vh, 40px);
   /* background-color: var(--background-color); */
@@ -152,6 +160,11 @@ h2 {
   pointer-events: all;
   cursor: pointer;
   animation: updown 1.5s ease-in infinite alternate;
+  z-index: 3;
+  background-color: var(--background-color-80);
+  backdrop-filter: blur(2.3px);
+  -webkit-backdrop-filter: blur(2.3px);
+  border-radius: 50%;
 }
 
 @keyframes updown {
@@ -177,7 +190,16 @@ h2 {
   padding: 2.5rem calc(5vw * var(--factor));
   border: solid 2px var(--body-color);
   border-radius: var(--border-radius);
-  box-shadow: 0.2px 2.7px 2.7px rgba(0, 0, 0, 0.05), 0.6px 6.9px 6.9px rgba(0, 0, 0, 0.071), 1.2px 14px 14.2px rgba(0, 0, 0, 0.089), 2.6px 28.8px 29.2px rgba(0, 0, 0, 0.11), 7px 79px 80px rgba(0, 0, 0, 0.16);
+  box-shadow: 0.2px 2.7px 2.7px rgba(0, 0, 0, 0.05),
+    0.6px 6.9px 6.9px rgba(0, 0, 0, 0.071),
+    1.2px 14px 14.2px rgba(0, 0, 0, 0.089),
+    2.6px 28.8px 29.2px rgba(0, 0, 0, 0.11), 7px 79px 80px rgba(0, 0, 0, 0.16);
+  position: relative;
+  z-index: 2;
+  /*glassmorphism*/
+  background: var(--background-color-40);
+  backdrop-filter: blur(2.3px);
+  -webkit-backdrop-filter: blur(2.3px);
 }
 
 .quote-container p {
@@ -473,8 +495,6 @@ section > .btn-close:hover {
   left: calc(50% - calc(calc(3vw * var(--factor)) + 1rem) / 2);
   cursor: pointer;
   pointer-events: all;
-  /* mix-blend-mode: multiply; */
-  z-index: 20;
 }
 
 .bubble-sprit svg {
