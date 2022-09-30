@@ -286,6 +286,7 @@ function fetchProject() {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+      document.querySelector(".projects-container .loading-modal").remove();
       data.forEach((p, i, arr) => {
         displayProject(p);
 
