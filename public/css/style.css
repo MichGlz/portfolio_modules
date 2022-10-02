@@ -124,7 +124,9 @@ section {
   border: solid 2px var(--body-color);
   position: relative;
   z-index: 2;
-  background-color: var(--background-color);
+  background-color: var(--background-color-40);
+  backdrop-filter: blur(2.3px);
+  -webkit-backdrop-filter: blur(2.3px);
 }
 
 .svg-container svg {
