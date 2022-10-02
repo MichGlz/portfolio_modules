@@ -21,6 +21,8 @@ function startWeb(e) {
 
 const urlParams = new URLSearchParams(window.location.search);
 
+
+
 const sms = urlParams.get("sms");
 
 let bubbleNumber = 0; //is an index to add in the class of a bubble
@@ -236,21 +238,24 @@ function callSection(e) {
   }
 
   const slidingSection = parent.querySelector(".sliding-section");
+  const sticky_box = parent.querySelector(".sticky");
   const btnClose = parent.querySelector(".btn-close");
 
   setTimeout(() => {
     bubbleFactory(slidingSection);
+    sticky_box.classList.add("appear");
   }, 1000);
 
   btnClose.addEventListener("click", function (e) {
     if (e.target.classList.contains("btn-close")) {
       slidingAnimation.reverse();
+      sticky_box.classList.remove("appear");
       slidingAnimation.onfinish = function () {
         document.querySelectorAll(".sliding-section .bubble-sprit").forEach((bubble) => {
           const animatedClass = bubble.classList[1];
           gsap.killTweensOf(`.${animatedClass}`);
         });
-
+        sticky_box.remove();
         slidingSection.remove();
       };
     }
@@ -341,7 +346,7 @@ if (sms) {
   const content = document.createTextNode("Thank you! for your email");
   message.appendChild(content);
   modal.appendChild(message);
-  const bubblesContainer = document.querySelector(".bubbles-container");
+  const bubblesContainer = document.querySelector("main");
   bubblesContainer.appendChild(modal);
   for (let i = 0; i < 5; i++) {
     bubbleFactory(bubblesContainer);
@@ -349,8 +354,8 @@ if (sms) {
   setTimeout(() => {
     const modal = document.querySelector(".thanks");
     modal.addEventListener("animationend", () => {
-      // Current URL: https://my-website.com/page_a
-      const nextURL = "https://michgonzalez.com/";
+
+      const nextURL = window.location.href.split("?")[0];
       const nextTitle = "Mich Gonzalez";
       const nextState = { additionalInformation: "Updated the URL with JS" };
 

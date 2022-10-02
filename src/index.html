@@ -118,6 +118,9 @@
     </div>
 
     <template id="about_me">
+      <div class="sticky">
+        <div class="btn-close"></div>
+      </div>
       <section class="about-me sliding-section">
         <div class="p-wrapper">
           <img src="assets/pic04.jpg" alt="autoretrato under acapulco chair" />
@@ -139,23 +142,26 @@
           </p>
           <p>// vanilla is my favourite JavaScript flavour</p>
         </div>
-        <div class="btn-close"></div>
       </section>
     </template>
 
     <template id="projects">
+      <div class="sticky">
+        <div class="btn-close"></div>
+      </div>
       <section class="projects sliding-section">
         <div class="projects-container">
           <div class="loading-modal">
             <img src="./assets/pacman.gif" alt="pacman loader" />
-            <p>Loading...</p>
           </div>
         </div>
-        <div class="btn-close sticky"></div>
       </section>
     </template>
 
     <template id="sandbox">
+      <div class="sticky">
+        <div class="btn-close"></div>
+      </div>
       <section class="sandbox sliding-section">
         <div class="sand-container">
           <!-- <embed type="text/html" src="face2.html" width="100%" height="800" /> -->
@@ -302,7 +308,6 @@
             </p>
           </div>
         </div>
-        <div class="btn-close sticky"></div>
       </section>
       <script
         async
@@ -311,10 +316,12 @@
     </template>
 
     <template id="contact">
-      <section class="contact sliding-section">
+      <div class="sticky">
         <div class="btn-close invert"></div>
+      </div>
+      <section class="contact sliding-section">
         <form
-          action="https://formsubmit.co/hola@michgonzalez.com"
+          action="https://formsubmit.co/bcfce97962a504104720582c3c93b5d1"
           method="POST"
           id="form-email"
         >
