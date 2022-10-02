@@ -207,7 +207,7 @@ h2 {
   background-repeat: no-repeat;
   background-size: contain;
   top: 90vh;
-  left: 2vh;
+  margin-left: calc(3vw * var(--factor));
   pointer-events: all;
   cursor: pointer;
   animation: updown 1.5s ease-in infinite alternate;
