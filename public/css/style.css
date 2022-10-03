@@ -853,7 +853,7 @@ section > .btn-close:hover,
   }
 
   .sticky .btn-close {
-    background-color: rgba(0, 255, 255, 0.6039215686);
+    background-color: rgba(0, 255, 255, 0.2352941176);
   }
 
   .contact {
