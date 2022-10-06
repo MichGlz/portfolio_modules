@@ -5,6 +5,7 @@ import windowWidth from "./modules/window_width.js";
 import fetchFace from "./modules/fetch_face.js";
 import checkIsMobile from "./modules/check_isMobile.js";
 import { closeEyes, openEyes, eyeMove } from "./modules/eyes_actions.js";
+import { formSetting } from './modules/send_mail.js';
 
 // const isMobile = checkIsMobile();
 
@@ -235,6 +236,11 @@ function callSection(e) {
     setTimeout(() => {
       faderMachine(".sand-project");
     }, 1000);
+  }
+
+  if (activeSection.contact) {
+    setTimeout(formSetting, 200);
+    // formSetting();
   }
 
   const slidingSection = parent.querySelector(".sliding-section");
