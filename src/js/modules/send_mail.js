@@ -19,7 +19,7 @@ export const formSetting = () => {
         console.log(formData);
         console.log(JSON.stringify(formData));
 
-        fetch('/', {
+        fetch('../../../server.js', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
