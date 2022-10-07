@@ -1,0 +1,51 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="200px" width="200px">
+  <defs>
+    <radialGradient id="0" gradientTransform="translate(0.05 -0.08) scale(0.89, 1.17)">
+      <stop offset="15%" stop-color="#f7fafc"/>
+      <stop offset="20.86%" stop-color="#f2f6fb"/>
+      <stop offset="26.71%" stop-color="#edf2fa"/>
+      <stop offset="32.57%" stop-color="#eaeef9"/>
+      <stop offset="38.43%" stop-color="#e7e9f9"/>
+      <stop offset="44.29%" stop-color="#e6e4fa"/>
+      <stop offset="56%" stop-color="#e9d8fd"/>
+      <stop offset="56.43%" stop-color="#e2d4fd"/>
+      <stop offset="56.86%" stop-color="#dbcffc"/>
+      <stop offset="57.29%" stop-color="#d2cbfc"/>
+      <stop offset="57.71%" stop-color="#c9c8fb"/>
+      <stop offset="58.14%" stop-color="#bec5fb"/>
+      <stop offset="59%" stop-color="#a3bffa"/>
+      <stop offset="59.43%" stop-color="#a0c1f9"/>
+      <stop offset="59.86%" stop-color="#9dc3f8"/>
+      <stop offset="60.29%" stop-color="#9ac5f7"/>
+      <stop offset="60.71%" stop-color="#98c7f6"/>
+      <stop offset="61.14%" stop-color="#95c9f6"/>
+      <stop offset="62%" stop-color="#90cdf4"/>
+      <stop offset="62.43%" stop-color="#80d7f3"/>
+      <stop offset="62.86%" stop-color="#76dfee"/>
+      <stop offset="63.29%" stop-color="#80e6e7"/>
+      <stop offset="63.71%" stop-color="#89ece0"/>
+      <stop offset="64.14%" stop-color="#92f2d9"/>
+      <stop offset="65%" stop-color="#c6f6d5"/>
+      <stop offset="65.43%" stop-color="#ccf8d1"/>
+      <stop offset="65.86%" stop-color="#d2f9cd"/>
+      <stop offset="66.29%" stop-color="#d9fac9"/>
+      <stop offset="66.71%" stop-color="#e1fcc3"/>
+      <stop offset="67.14%" stop-color="#e9fdbc"/>
+      <stop offset="68%" stop-color="#fefcbf"/>
+      <stop offset="68.57%" stop-color="#fef5d8"/>
+      <stop offset="69.14%" stop-color="#fdf0da"/>
+      <stop offset="69.71%" stop-color="#fdebd9"/>
+      <stop offset="70.29%" stop-color="#fde6d8"/>
+      <stop offset="70.86%" stop-color="#fde1d7"/>
+      <stop offset="72%" stop-color="#fed7d7"/>
+      <stop offset="72.57%" stop-color="#fbdedf"/>
+      <stop offset="73.14%" stop-color="#f8e4e5"/>
+      <stop offset="73.71%" stop-color="#f7eaeb"/>
+      <stop offset="74.29%" stop-color="#f7f0f1"/>
+      <stop offset="74.86%" stop-color="#f9f5f6"/>
+      <stop offset="76%" stop-color="#ffffff"/>
+    </radialGradient>
+  </defs>
+  <rect fill="url(#0)" height="100%" width="100%"/>
+</svg>
