@@ -1,5 +1,5 @@
 export default function fetchFace() {
-  fetch("../../assets/face2.svg")
+  fetch("./assets/face2.svg")
     .then(function (res) {
       return res.text();
     })
