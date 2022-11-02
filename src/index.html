@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mich Gonzalez</title>
-
+    <link rel="icon" type="image/svg+xml" href="/assets/mini_face.svg" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link
+    <!-- <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="./assets/favicon/apple-touch-icon.png"
@@ -24,7 +24,7 @@
       sizes="16x16"
       href="./assets/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" /> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
   </head>
@@ -70,8 +70,7 @@
         <div class="sliding-sections-container"></div>
 
         <div class="bubbles-container">
-          <a href="#quote" id="arrow"></a>
-          <ul class="links-SoMe">
+          <ul class="links-SoMe on-mobile-No">
             <li>
               <a href="https://www.linkedin.com/in/miguel-gonzalez-dasseo/"
                 ><img
@@ -112,13 +111,17 @@
             <li id="bubble-counter">Score: <span id="score">00</span></li>
           </ul>
         </div>
+        <a href="#quote" id="arrow"></a>
       </main>
 
       <footer></footer>
     </div>
 
     <template id="about_me">
-      <section class="about-me sliding-section btn-close">
+      <div class="sticky">
+        <div class="btn-close"></div>
+      </div>
+      <section class="about-me sliding-section">
         <div class="p-wrapper">
           <img src="assets/pic04.jpg" alt="autoretrato under acapulco chair" />
           <p>
@@ -139,23 +142,31 @@
           </p>
           <p>// vanilla is my favourite JavaScript flavour</p>
         </div>
-        <div class="btn-close"></div>
       </section>
     </template>
 
     <template id="projects">
-      <section class="projects sliding-section">
-        <div class="projects-container"></div>
-
+      <div class="sticky">
         <div class="btn-close"></div>
+      </div>
+      <section class="projects sliding-section">
+        <div class="projects-container">
+          <div class="loading-modal">
+            <img src="./assets/pacman.gif" alt="pacman loader" />
+            <p>Loading...</p>
+          </div>
+        </div>
       </section>
     </template>
 
     <template id="sandbox">
+      <div class="sticky">
+        <div class="btn-close"></div>
+      </div>
       <section class="sandbox sliding-section">
         <div class="sand-container">
           <!-- <embed type="text/html" src="face2.html" width="100%" height="800" /> -->
-          <div class="svg-container-img sand-project">
+          <div class="svg-container-img sand-project on-mobile-No">
             <svg
               id="Layer_1_copy_Image"
               data-name="Layer 1 copy Image"
@@ -188,29 +199,28 @@
                 <image
                   id="left-eye_Image"
                   data-name="left-eye Image"
-                  width="138"
-                  height="131"
-                  transform="translate(222.44 289.82) scale(0.23 0.23)"
-                  xlink:href="assets/Artboard11.png"
+                  width="33"
+                  height="31"
+                  transform="translate(222.44 289.82)"
+                  xlink:href="assets/eyeMedium.png"
                 />
               </g>
               <g class="eyeball_2">
                 <image
                   id="right-eye_Image"
                   data-name="right-eye Image"
-                  width="138"
-                  height="131"
-                  transform="translate(327.12 298.21) scale(0.23 0.23)"
-                  xlink:href="assets/Artboard12.png"
+                  width="33"
+                  height="31"
+                  transform="translate(327.12 298.21)"
+                  xlink:href="assets/eyeMedium.png"
                 />
               </g>
               <image
                 id="Layer_1_copy_Image-2"
                 data-name="Layer 1 copy Image"
-                width="2320"
-                height="3088"
-                transform="scale(0.23 0.23)"
-                xlink:href="assets/Artboard13.png"
+                width="540"
+                height="719"
+                xlink:href="assets/faceMedium.png"
               />
             </svg>
             <div class="fly">
@@ -299,7 +309,6 @@
             </p>
           </div>
         </div>
-        <div class="btn-close"></div>
       </section>
       <script
         async
@@ -308,13 +317,16 @@
     </template>
 
     <template id="contact">
-      <section class="contact sliding-section">
+      <div class="sticky">
         <div class="btn-close invert"></div>
-        <form
-          action="https://formsubmit.co/hola@michgonzalez.com"
+      </div>
+      <section class="contact sliding-section">
+        <!-- <form
+          action="https://formsubmit.co/bcfce97962a504104720582c3c93b5d1"
           method="POST"
           id="form-email"
-        >
+        > -->
+        <form method="POST" id="form-email">
           <label for="email"
             >email:
             <input type="email" name="email" placeholder="email" required />

@@ -10,6 +10,7 @@ import { closeEyes, openEyes, eyeMove } from "./modules/eyes_actions.js";
 
 window.addEventListener("load", startWeb);
 const root = document.documentElement;
+
 function startWeb(e) {
   window.addEventListener("resize", () => {
     windowWidth(root);
@@ -19,6 +20,8 @@ function startWeb(e) {
 }
 
 const urlParams = new URLSearchParams(window.location.search);
+
+
 
 const sms = urlParams.get("sms");
 
@@ -53,12 +56,16 @@ document.querySelectorAll(".box").forEach((box) => box.addEventListener("click",
 orangeToggle.addEventListener("click", () => {
   if (orangeToggle.checked) {
     root.style.setProperty("--body-color", " #2d2926");
-    root.style.setProperty("--background-color", "#f2aa4c");
-    root.style.setProperty("--background-gradient", "radial-gradient(circle, rgba(242, 170, 76, 1) 56%, rgba(163, 118, 59, 1) 100%)");
+    root.style.setProperty("--background-color", "#fff");
+    root.style.setProperty("--background-color-80", "#ffffffcc");
+    root.style.setProperty("--background-color-40", "#ffffff66");
+    root.style.setProperty("--background-gradient", "#fff");
   } else {
     root.style.setProperty("--body-color", " #2d2926");
-    root.style.setProperty("--background-color", "#fff");
-    root.style.setProperty("--background-gradient", "#fff");
+    root.style.setProperty("--background-color", "#f2aa4c");
+    root.style.setProperty("--background-color-80", "#f2aa4ccc");
+    root.style.setProperty("--background-color-40", "#f2aa4c66");
+    root.style.setProperty("--background-gradient", "radial-gradient(circle, rgba(242, 170, 76, 1) 56%, rgba(163, 118, 59, 1) 100%)");
   }
 });
 
@@ -123,6 +130,9 @@ function bubbleFactory(container) {
       })
       .then(function (data) {
         bubbleSprit.innerHTML = data;
+        const bubblecolor = randomColorGenerator();
+        bubbleSprit.querySelector(".bubble-body").style.fill = bubblecolor;
+        bubbleSprit.querySelector(".backgroung").style.fill = bubblecolor;
       });
 
     bubbleSprit.addEventListener("mouseover", explode);
@@ -132,11 +142,14 @@ function bubbleFactory(container) {
     const bubbleX = (container.getBoundingClientRect().width / 2) * 0.8;
 
     const durationNo = 10 * (Math.random() * 3) + 3;
+    const durationRatation = 4 + Math.random();
+    const scaleFactor = (Math.random() * 9) / 10;
 
     const t1 = gsap.timeline({ defaults: { delay: 0.2 * i }, onComplete: removeBubble, onCompleteParams: [`.bubble-${bubbleNumber}`] });
     t1.to(`.bubble-${bubbleNumber}`, { duration: durationNo, y: -1 * bubbleY, ease: "circ.out" });
     gsap.fromTo(`.bubble-${bubbleNumber}`, { x: -a * (Math.random() * 100) }, { duration: durationNo / 4, delay: 0.2 * i, ease: "slow(0.1, 0.4, true)", x: a * (Math.random() * bubbleX) });
-    gsap.to(`.bubble-${bubbleNumber}`, { rotation: 360, duration: 4 + Math.random(), ease: "none", repeat: 10 });
+    gsap.to(`.bubble-${bubbleNumber}`, { rotation: 360, duration: durationRatation, ease: "none", repeat: 10 });
+    gsap.fromTo(`.bubble-${bubbleNumber}`, { scale: 0.65 + scaleFactor }, { scale: 0.75 + scaleFactor, duration: durationNo, ease: "none" });
 
     function explode(e) {
       chekingScore();
@@ -225,21 +238,24 @@ function callSection(e) {
   }
 
   const slidingSection = parent.querySelector(".sliding-section");
+  const sticky_box = parent.querySelector(".sticky");
   const btnClose = parent.querySelector(".btn-close");
 
   setTimeout(() => {
     bubbleFactory(slidingSection);
+    sticky_box.classList.add("appear");
   }, 1000);
 
   btnClose.addEventListener("click", function (e) {
     if (e.target.classList.contains("btn-close")) {
       slidingAnimation.reverse();
+      sticky_box.classList.remove("appear");
       slidingAnimation.onfinish = function () {
         document.querySelectorAll(".sliding-section .bubble-sprit").forEach((bubble) => {
           const animatedClass = bubble.classList[1];
           gsap.killTweensOf(`.${animatedClass}`);
         });
-
+        sticky_box.remove();
         slidingSection.remove();
       };
     }
@@ -265,7 +281,7 @@ function callSection(e) {
 }
 
 function fetchProject() {
-  fetch("https://reicpe-9cc2.restdb.io/rest/projects", {
+  fetch("https://reicpe-9cc2.restdb.io/rest/projects?q={}&sort=_created&dir=1", {
     method: "GET",
     headers: {
       "x-apikey": "606d5dcef5535004310074f4",
@@ -275,7 +291,7 @@ function fetchProject() {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-
+      document.querySelector(".projects-container .loading-modal").remove();
       data.forEach((p, i, arr) => {
         displayProject(p);
 
@@ -330,7 +346,7 @@ if (sms) {
   const content = document.createTextNode("Thank you! for your email");
   message.appendChild(content);
   modal.appendChild(message);
-  const bubblesContainer = document.querySelector(".bubbles-container");
+  const bubblesContainer = document.querySelector("main");
   bubblesContainer.appendChild(modal);
   for (let i = 0; i < 5; i++) {
     bubbleFactory(bubblesContainer);
@@ -338,8 +354,8 @@ if (sms) {
   setTimeout(() => {
     const modal = document.querySelector(".thanks");
     modal.addEventListener("animationend", () => {
-      // Current URL: https://my-website.com/page_a
-      const nextURL = "https://michgonzalez.com/";
+
+      const nextURL = window.location.href.split("?")[0];
       const nextTitle = "Mich Gonzalez";
       const nextState = { additionalInformation: "Updated the URL with JS" };
 
@@ -362,6 +378,10 @@ const appearOnScroll = new IntersectionObserver(function (entries, appearOnScrol
     if (!entry.isIntersecting) {
       return;
     } else {
+      const spinner = document.getElementById("#spinner");
+      if (spinner) {
+        spinner.remove();
+      }
       entry.target.classList.add("appear");
       appearOnScroll.unobserve(entry.target);
     }
