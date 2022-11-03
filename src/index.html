@@ -329,17 +329,24 @@
         <form method="POST" id="form-email">
           <label for="email"
             >email:
-            <input type="email" name="email" placeholder="email" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              data-email="info"
+              required
+            />
           </label>
 
-          <input
-            type="hidden"
-            name="_next"
-            value="https://michgonzalez.com/?sms=01"
-          />
           <label for="name"
             >name:
-            <input type="text" name="name" placeholder="your name" required />
+            <input
+              type="text"
+              name="name"
+              placeholder="your name"
+              data-email="info"
+              required
+            />
           </label>
 
           <label for="message"
@@ -348,12 +355,11 @@
               name="message"
               placeholder="write your message here"
               rows="3"
+              data-email="info"
               required
             ></textarea>
           </label>
-
-          <button type="submit">Send</button>
-          <a class="button-email" id="btn-send-email">send by email</a>
+          <a class="button-email" id="btn-send-email">send</a>
         </form>
         <ul class="links-SoMe">
           <li>

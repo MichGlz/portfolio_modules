@@ -237,6 +237,10 @@ function callSection(e) {
     }, 1000);
   }
 
+  if (activeSection.contact) {
+    activateEmailBtn();
+  }
+
   const slidingSection = parent.querySelector(".sliding-section");
   const sticky_box = parent.querySelector(".sticky");
   const btnClose = parent.querySelector(".btn-close");
@@ -339,22 +343,35 @@ function imgGenerator(projectName) {
   return `./assets/${projectName}.jpg`;
 }
 
+function activateEmailBtn() {
+  const btn = document.getElementById('btn-send-email');
+  const form = document.getElementById('form-email');
+  const payload = {};
+  btn.addEventListener("click", () => {
+    form.querySelectorAll("[data-email=info]").forEach((input) => {
+      payload[input.name] = input.value;
+    });
+    btn.href = `mailto:hola@michgonzalez.com?subject=Mail%20from%20${payload.name},%20${payload.email}&body=name:%20${payload.name}%0D%0Aemail:%20${payload.email}%0D%0A%0D%0A${payload.message}%0D%0A%0D%0A`;
+    setTimeout(() => {
+      location.href = `${window.location.href}?sms=01`;
+    }, 2000);
+  });
+
+}
+
 if (sms) {
   const modal = document.createElement("div");
   modal.classList.add("thanks");
   const message = document.createElement("h1");
   const content = document.createTextNode("Thank you! for your email");
+  const instruction = document.createElement("p");
+  const contentInstr = document.createTextNode("click anywhere");
   message.appendChild(content);
   modal.appendChild(message);
-  const bubblesContainer = document.querySelector("main");
-  bubblesContainer.appendChild(modal);
-  for (let i = 0; i < 5; i++) {
-    bubbleFactory(bubblesContainer);
-  }
-  setTimeout(() => {
-    const modal = document.querySelector(".thanks");
+  instruction.appendChild(contentInstr);
+  modal.appendChild(instruction);
+  modal.addEventListener("click", (e) => {
     modal.addEventListener("animationend", () => {
-
       const nextURL = window.location.href.split("?")[0];
       const nextTitle = "Mich Gonzalez";
       const nextState = { additionalInformation: "Updated the URL with JS" };
@@ -365,7 +382,28 @@ if (sms) {
       modal.remove();
     });
     modal.classList.add("banish");
-  }, 1500);
+  });
+  const bubblesContainer = document.querySelector("main");
+  bubblesContainer.appendChild(modal);
+  for (let i = 0; i < 5; i++) {
+    bubbleFactory(bubblesContainer);
+  }
+
+  // setTimeout(() => {
+  //   const modal = document.querySelector(".thanks");
+  //   modal.addEventListener("animationend", () => {
+
+  //     const nextURL = window.location.href.split("?")[0];
+  //     const nextTitle = "Mich Gonzalez";
+  //     const nextState = { additionalInformation: "Updated the URL with JS" };
+
+  //     // This will replace the current entry in the browser's history, without reloading
+  //     window.history.replaceState(nextState, nextTitle, nextURL);
+
+  //     modal.remove();
+  //   });
+  //   modal.classList.add("banish");
+  // }, 1500);
 }
 
 const appearOptions = {
