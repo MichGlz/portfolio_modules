@@ -72,7 +72,9 @@
         <div class="bubbles-container">
           <ul class="links-SoMe on-mobile-No">
             <li>
-              <a href="https://www.linkedin.com/in/miguel-gonzalez-dasseo/"
+              <a
+                href="https://www.linkedin.com/in/miguel-gonzalez-dasseo/"
+                target="_blank"
                 ><img
                   src="./assets/linkedin-transparent.svg"
                   alt="linkedin logo"
@@ -81,13 +83,13 @@
               >
             </li>
             <li>
-              <a href="https://github.com/MichGlz"
+              <a href="https://github.com/MichGlz" target="_blank"
                 ><img src="./assets/github-transparent.svg" alt="github logo" />
                 GitHub</a
               >
             </li>
             <li>
-              <a href="https://codepen.io/michglz/"
+              <a href="https://codepen.io/michglz/" target="_blank"
                 ><img
                   src="./assets/codepen-transparent.svg"
                   alt="codepen logo"
@@ -248,9 +250,16 @@
             >
               <span
                 >See the Pen
-                <a href="https://codepen.io/michglz/pen/ExXBaLR"> Untitled</a>
-                by MichGlz (<a href="https://codepen.io/michglz">@michglz</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span
+                <a
+                  href="https://codepen.io/michglz/pen/ExXBaLR"
+                  target="_blank"
+                >
+                  Untitled</a
+                >
+                by MichGlz (<a href="https://codepen.io/michglz" target="_blank"
+                  >@michglz</a
+                >) on
+                <a href="https://codepen.io" target="_blank">CodePen</a>.</span
               >
             </p>
           </div>
@@ -274,11 +283,16 @@
             >
               <span
                 >See the Pen
-                <a href="https://codepen.io/michglz/pen/QWgzOmq">
+                <a
+                  href="https://codepen.io/michglz/pen/QWgzOmq"
+                  target="_blank"
+                >
                   car-flower-house</a
                 >
-                by MichGlz (<a href="https://codepen.io/michglz">@michglz</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span
+                by MichGlz (<a href="https://codepen.io/michglz" target="_blank"
+                  >@michglz</a
+                >) on
+                <a href="https://codepen.io" target="_blank">CodePen</a>.</span
               >
             </p>
           </div>
@@ -302,9 +316,16 @@
             >
               <span
                 >See the Pen
-                <a href="https://codepen.io/michglz/pen/wvqEadE"> Untitled</a>
-                by MichGlz (<a href="https://codepen.io/michglz">@michglz</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span
+                <a
+                  href="https://codepen.io/michglz/pen/wvqEadE"
+                  target="_blank"
+                >
+                  Untitled</a
+                >
+                by MichGlz (<a href="https://codepen.io/michglz" target="_blank"
+                  >@michglz</a
+                >) on
+                <a href="https://codepen.io" target="_blank">CodePen</a>.</span
               >
             </p>
           </div>
@@ -326,7 +347,7 @@
           method="POST"
           id="form-email"
         > -->
-        <form method="POST" id="form-email">
+        <!-- <form method="POST" id="form-email">
           <label for="email"
             >email:
             <input
@@ -360,22 +381,67 @@
             ></textarea>
           </label>
           <a class="button-email" id="btn-send-email">send</a>
+        </form> -->
+        <form
+          action="mailto:hola@michgonzalez.com?subject=Mail%20from%20michgonzalez.com"
+          method="post"
+          enctype="text/plain"
+          autocomplete="on"
+          id="form-email"
+        >
+          <label for="email"
+            >email:
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              data-email="info"
+              required
+            />
+          </label>
+
+          <label for="name"
+            >name:
+            <input
+              type="text"
+              name="name"
+              placeholder="your name"
+              data-email="info"
+              required
+            />
+          </label>
+
+          <label for="message"
+            >your message:
+            <textarea
+              name="message"
+              placeholder="write your message here"
+              rows="3"
+              data-email="info"
+              required
+            ></textarea>
+          </label>
+
+          <button type="submit" name="submit" class="button-email">send</button>
+          <button type="reset" name="reset" class="button-email">reset</button>
         </form>
         <ul class="links-SoMe">
           <li>
-            <a href="https://www.linkedin.com/in/miguel-gonzalez-dasseo/"
+            <a
+              href="https://www.linkedin.com/in/miguel-gonzalez-dasseo/"
+              target="_blank"
               ><img src="./assets/linkedin-mini.svg" alt="linkedin logo" />
               LinkedIn</a
             >
           </li>
           <li>
-            <a href="https://github.com/MichGlz"
+            <a href="https://github.com/MichGlz" target="_blank"
               ><img src="./assets/github-mini.svg" alt="github logo" />
               GitHub</a
             >
           </li>
           <li>
-            <a href="https://codepen.io/michglz/"
+            <a href="https://codepen.io/michglz/" target="_blank"
               ><img src="./assets/codepen-mini.svg" alt="codepen logo" />
               CodePen</a
             >
@@ -395,8 +461,10 @@
             numquam vitae!
           </p>
           <div class="links-wrapper">
-            <a href="http://" class="web">Visit the project</a>
-            <a href="http://" class="repo">Link to the gitHub repository</a>
+            <a href="http://" class="web" target="_blank">Visit the project</a>
+            <a href="http://" class="repo" target="_blank"
+              >Link to the gitHub repository</a
+            >
           </div>
         </div>
         <div class="image-wrapper">

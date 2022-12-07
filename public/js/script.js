@@ -347,19 +347,31 @@ function activateEmailBtn() {
   const btn = document.getElementById('btn-send-email');
   const form = document.getElementById('form-email');
   const payload = {};
-  btn.addEventListener("click", () => {
+
+  form.addEventListener("submit", () => {
     form.querySelectorAll("[data-email=info]").forEach((input) => {
       payload[input.name] = input.value;
     });
-    btn.href = `mailto:hola@michgonzalez.com?subject=Mail%20from%20${payload.name},%20${payload.email}&body=name:%20${payload.name}%0D%0Aemail:%20${payload.email}%0D%0A%0D%0A${payload.message}%0D%0A%0D%0A`;
+    form.action = `mailto:hola@michgonzalez.com?subject=Mail%20from%20${payload.name},%20${payload.email}&body=name:%20${payload.name}%0D%0Aemail:%20${payload.email}%0D%0A%0D%0A${payload.message}%0D%0A%0D%0A`;
     setTimeout(() => {
       location.href = `${window.location.href}?sms=01`;
     }, 2000);
   });
 
+  // btn.addEventListener("click", () => {
+  //   form.querySelectorAll("[data-email=info]").forEach((input) => {
+  //     payload[input.name] = input.value;
+  //   });
+  //   btn.href = `mailto:hola@michgonzalez.com?subject=Mail%20from%20${payload.name},%20${payload.email}&body=name:%20${payload.name}%0D%0Aemail:%20${payload.email}%0D%0A%0D%0A${payload.message}%0D%0A%0D%0A`;
+  //   setTimeout(() => {
+  //     location.href = `${window.location.href}?sms=01`;
+  //   }, 2000);
+  // });
+
 }
 
 if (sms) {
+  console.log("modal");
   const modal = document.createElement("div");
   modal.classList.add("thanks");
   const message = document.createElement("h1");
