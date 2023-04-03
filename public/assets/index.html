@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="msapplication-TileImage" content="image_url" />
+
+    <meta property="og:site_name" content="Mich Gonzalez" />
+    <meta property="og:title" content="It is my personal portfolio" />
+    <meta
+      property="og:description"
+      content="You can find some of projects an about me page and play with the bubbles"
+    />
+
+    <meta
+      property="og:image"
+      itemprop="image"
+      content="/assets/portfolio.jpg"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/jpg" />
+
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+
+    <meta property="og:url" content="your_website_url_here" />
+    <title>Mich Gonzalez</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/mini_face.svg" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" /> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <header id="header">
+        <h1>Miguel Gonzalez</h1>
+      </header>
+
+      <main>
+        <div class="sections-wrapper">
+          <section id="principal">
+            <div class="svg-container-wrapper">
+              <div class="svg-container"></div>
+            </div>
+            <div class="boxes-container">
+              <button data-section="projects" class="box top left">
+                projects
+              </button>
+              <button data-section="sandbox" class="box bottom right">
+                sandbox
+              </button>
+              <button data-section="about_me" class="box top right">
+                about me
+              </button>
+              <button data-section="contact" class="box bottom left">
+                contact
+              </button>
+            </div>
+          </section>
+          <section id="quote">
+            <div class="quote-container">
+              <p>
+                Coding sometimes causes frustration, which can be triggered as
+                easily as bursting a bubble.
+              </p>
+              <p>Just remember how fun it is to play with them.</p>
+            </div>
+          </section>
+        </div>
+
+        <div class="sliding-sections-container"></div>
+
+        <div class="bubbles-container">
+          <ul class="links-SoMe on-mobile-No">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/miguel-gonzalez-dasseo/"
+                target="_blank"
+                ><img
+                  src="./assets/linkedin-transparent.svg"
+                  alt="linkedin logo"
+                />
+                LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/MichGlz" target="_blank"
+                ><img src="./assets/github-transparent.svg" alt="github logo" />
+                GitHub</a
+              >
+            </li>
+            <li>
+              <a href="https://codepen.io/michglz/" target="_blank"
+                ><img
+                  src="./assets/codepen-transparent.svg"
+                  alt="codepen logo"
+                />
+                CodePen</a
+              >
+            </li>
+            <li>
+              <div class="orange-toggle">
+                <label for="orange-mode">
+                  <input
+                    type="checkbox"
+                    name="orange-mode"
+                    id="orange-mode"
+                    checked
+                  />
+                  <div class="switch"></div>
+                </label>
+              </div>
+            </li>
+            <li id="bubble-counter">Score: <span id="score">00</span></li>
+          </ul>
+        </div>
+        <a href="#quote" id="arrow"></a>
+      </main>
+
+      <footer></footer>
+    </div>
+
+    <template id="about_me">
+      <div class="sticky">
+        <div class="btn-close"></div>
+      </div>
+      <section class="about-me sliding-section">
+        <div class="p-wrapper">
+          <img src="assets/pic04.jpg" alt="autoretrato under acapulco chair" />
+          <p>
+            I was born and raised in Mexico City. Since a very young age I have
+            always been very curious and wanted to understand how things work,
+            which led me to disassemble most of my toys, to create new ones.
+          </p>
+          <p>
+            I moved to Denmark in 2013 and worked for the furniture industry,
+            until I started a new adventure with the same curiosity as when I
+            was young. I decided to redirect my life towards new opportunities
+            and began studying Multimedia Design at KEA.
+          </p>
+          <p>
+            There, I found my new passion for programming and coding, and
+            simultaneously it has stimulated and directed my creativity in many
+            ways.
+          </p>
+          <p>// vanilla is my favourite JavaScript flavour</p>
+        </div>
+      </section>
+    </template>
+
+    <template id="projects">
+      <div class="sticky">
+        <div class="btn-close"></div>
+      </div>
+      <section class="projects sliding-section">
+        <div class="projects-container">
+          <div class="loading-modal">
+            <img src="./assets/pacman.gif" alt="pacman loader" />
+            <p>Loading...</p>
+          </div>
+        </div>
+      </section>
+    </template>
+
+    <template id="sandbox">
+      <div class="sticky">
+        <div class="btn-close"></div>
+      </div>
+      <section class="sandbox sliding-section">
+        <div class="sand-container">
+          <!-- <embed type="text/html" src="face2.html" width="100%" height="800" /> -->
+          <div class="svg-container-img sand-project on-mobile-No">
+            <svg
+              id="Layer_1_copy_Image"
+              data-name="Layer 1 copy Image"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 540.93 720"
+            >
+              <defs>
+                <style>
+                  .cls-102 {
+                    fill: #f7f7f7;
+                  }
+
+                  .eyeball_2 {
+                    transform-box: fill-box;
+                    transform-origin: 60% 40%;
+                    transform: scale(1.1) rotate(200deg);
+                  }
+                </style>
+              </defs>
+              <rect
+                class="cls-102"
+                x="186.3"
+                y="283.29"
+                width="194.69"
+                height="50.36"
+                rx="2.33"
+              />
+              <g class="eyeball_2">
+                <image
+                  id="left-eye_Image"
+                  data-name="left-eye Image"
+                  width="33"
+                  height="31"
+                  transform="translate(222.44 289.82)"
+                  xlink:href="assets/eyeMedium.png"
+                />
+              </g>
+              <g class="eyeball_2">
+                <image
+                  id="right-eye_Image"
+                  data-name="right-eye Image"
+                  width="33"
+                  height="31"
+                  transform="translate(327.12 298.21)"
+                  xlink:href="assets/eyeMedium.png"
+                />
+              </g>
+              <image
+                id="Layer_1_copy_Image-2"
+                data-name="Layer 1 copy Image"
+                width="540"
+                height="719"
+                xlink:href="assets/faceMedium.png"
+              />
+            </svg>
+            <div class="fly">
+              <image id="fly-2" src="assets/fly-2.png" alt="a fly" />
+            </div>
+            <p>Hover the Image</p>
+          </div>
+          <div class="sand-project">
+            <p
+              class="codepen sand-project"
+              data-height="500"
+              data-default-tab="html,result"
+              data-slug-hash="ExXBaLR"
+              data-user="michglz"
+              style="
+                height: 50vw;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a
+                  href="https://codepen.io/michglz/pen/ExXBaLR"
+                  target="_blank"
+                >
+                  Untitled</a
+                >
+                by MichGlz (<a href="https://codepen.io/michglz" target="_blank"
+                  >@michglz</a
+                >) on
+                <a href="https://codepen.io" target="_blank">CodePen</a>.</span
+              >
+            </p>
+          </div>
+          <div class="sand-project">
+            <p
+              class="codepen sand-project"
+              data-height="500"
+              data-default-tab="html,result"
+              data-slug-hash="QWgzOmq"
+              data-user="michglz"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a
+                  href="https://codepen.io/michglz/pen/QWgzOmq"
+                  target="_blank"
+                >
+                  car-flower-house</a
+                >
+                by MichGlz (<a href="https://codepen.io/michglz" target="_blank"
+                  >@michglz</a
+                >) on
+                <a href="https://codepen.io" target="_blank">CodePen</a>.</span
+              >
+            </p>
+          </div>
+          <div class="sand-project">
+            <p
+              class="codepen"
+              data-height="300"
+              data-default-tab="html,result"
+              data-slug-hash="wvqEadE"
+              data-user="michglz"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a
+                  href="https://codepen.io/michglz/pen/wvqEadE"
+                  target="_blank"
+                >
+                  Untitled</a
+                >
+                by MichGlz (<a href="https://codepen.io/michglz" target="_blank"
+                  >@michglz</a
+                >) on
+                <a href="https://codepen.io" target="_blank">CodePen</a>.</span
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+      <script
+        async
+        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+      ></script>
+    </template>
+
+    <template id="contact">
+      <div class="sticky">
+        <div class="btn-close invert"></div>
+      </div>
+      <section class="contact sliding-section">
+        <form
+          action="mailto:hola@michgonzalez.com?subject=Mail%20from%20michgonzalez.com"
+          method="post"
+          enctype="text/plain"
+          autocomplete="on"
+          id="form-email"
+        >
+          <label for="email"
+            >email:
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              data-email="info"
+              required
+            />
+          </label>
+
+          <label for="name"
+            >name:
+            <input
+              type="text"
+              name="name"
+              placeholder="your name"
+              data-email="info"
+              required
+            />
+          </label>
+
+          <label for="message"
+            >your message:
+            <textarea
+              name="message"
+              placeholder="write your message here"
+              rows="3"
+              data-email="info"
+              required
+            ></textarea>
+          </label>
+
+          <button type="submit" name="submit" class="button-email">send</button>
+          <button type="reset" name="reset" class="button-email">reset</button>
+        </form>
+        <ul class="links-SoMe">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/miguel-gonzalez-dasseo/"
+              target="_blank"
+              ><img src="./assets/linkedin-mini.svg" alt="linkedin logo" />
+              LinkedIn</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/MichGlz" target="_blank"
+              ><img src="./assets/github-mini.svg" alt="github logo" />
+              GitHub</a
+            >
+          </li>
+          <li>
+            <a href="https://codepen.io/michglz/" target="_blank"
+              ><img src="./assets/codepen-mini.svg" alt="codepen logo" />
+              CodePen</a
+            >
+          </li>
+        </ul>
+      </section>
+    </template>
+
+    <template id="project-card-template">
+      <article class="project-card">
+        <div class="info-wrapper">
+          <h2 class="project-title">Bjorn's Cake</h2>
+          <p class="project-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+            autem ipsam nemo, numquam est nobis laborum deserunt quam
+            voluptatibus, vel rerum earum! Magni iure minima ex obcaecati ea,
+            numquam vitae!
+          </p>
+          <div class="links-wrapper">
+            <a href="http://" class="web" target="_blank">Visit the project</a>
+            <a href="http://" class="repo" target="_blank"
+              >Link to the gitHub repository</a
+            >
+          </div>
+        </div>
+        <div class="image-wrapper">
+          <img src="./assets/bjornscake.jpg" alt="web page screen shot" />
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
