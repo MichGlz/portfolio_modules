@@ -285,7 +285,7 @@ function callSection(e) {
 }
 
 function fetchProject() {
-  fetch("https://reicpe-9cc2.restdb.io/rest/projects?q={}&sort=_created&dir=1", {
+  fetch("https://reicpe-9cc2.restdb.io/rest/projects?q={}&sort=position&dir=1", {
     method: "GET",
     headers: {
       "x-apikey": "606d5dcef5535004310074f4",
