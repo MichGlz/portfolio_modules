@@ -12,10 +12,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $headers = "From: $email";
 
   if(mail($to, $subject, $body, $headers)) {
-    header("Location: success.html");
+    header("Location: /?sms=01");
     exit();
   } else {
-    header("Location: error.html");
+    header("Location: /?sms=02");
     exit();
   }
 }

@@ -238,7 +238,7 @@ function callSection(e) {
   }
 
   if (activeSection.contact) {
-    activateEmailBtn();
+    // activateEmailBtn();
   }
 
   const slidingSection = parent.querySelector(".sliding-section");
@@ -372,10 +372,11 @@ function activateEmailBtn() {
 
 if (sms) {
   console.log("modal");
+  const screenMessage = sms === "01" ? "Thank you! for your email" : "Try again something went wrong";
   const modal = document.createElement("div");
   modal.classList.add("thanks");
   const message = document.createElement("h1");
-  const content = document.createTextNode("Thank you! for your email");
+  const content = document.createTextNode(screenMessage);
   const instruction = document.createElement("p");
   const contentInstr = document.createTextNode("click anywhere");
   message.appendChild(content);
