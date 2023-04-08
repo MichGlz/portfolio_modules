@@ -285,12 +285,8 @@ function callSection(e) {
 }
 
 function fetchProject() {
-  fetch("https://reicpe-9cc2.restdb.io/rest/projects?q={}&sort=position&dir=1", {
+  fetch("datafrom.php", {
     method: "GET",
-    headers: {
-      "x-apikey": "606d5dcef5535004310074f4",
-      //"x-apikey": API_KEY,
-    },
   })
     .then((res) => res.json())
     .then((data) => {
@@ -343,32 +339,32 @@ function imgGenerator(projectName) {
   return `./assets/${projectName}.jpg`;
 }
 
-function activateEmailBtn() {
-  const btn = document.getElementById('btn-send-email');
-  const form = document.getElementById('form-email');
-  const payload = {};
+// function activateEmailBtn() {
+//   const btn = document.getElementById('btn-send-email');
+//   const form = document.getElementById('form-email');
+//   const payload = {};
 
-  form.addEventListener("submit", () => {
-    form.querySelectorAll("[data-email=info]").forEach((input) => {
-      payload[input.name] = input.value;
-    });
-    form.action = `mailto:hola@michgonzalez.com?subject=Mail%20from%20${payload.name},%20${payload.email}&body=name:%20${payload.name}%0D%0Aemail:%20${payload.email}%0D%0A%0D%0A${payload.message}%0D%0A%0D%0A`;
-    setTimeout(() => {
-      location.href = `${window.location.href}?sms=01`;
-    }, 2000);
-  });
+//   form.addEventListener("submit", () => {
+//     form.querySelectorAll("[data-email=info]").forEach((input) => {
+//       payload[input.name] = input.value;
+//     });
+//     form.action = `mailto:hola@michgonzalez.com?subject=Mail%20from%20${payload.name},%20${payload.email}&body=name:%20${payload.name}%0D%0Aemail:%20${payload.email}%0D%0A%0D%0A${payload.message}%0D%0A%0D%0A`;
+//     setTimeout(() => {
+//       location.href = `${window.location.href}?sms=01`;
+//     }, 2000);
+//   });
 
-  // btn.addEventListener("click", () => {
-  //   form.querySelectorAll("[data-email=info]").forEach((input) => {
-  //     payload[input.name] = input.value;
-  //   });
-  //   btn.href = `mailto:hola@michgonzalez.com?subject=Mail%20from%20${payload.name},%20${payload.email}&body=name:%20${payload.name}%0D%0Aemail:%20${payload.email}%0D%0A%0D%0A${payload.message}%0D%0A%0D%0A`;
-  //   setTimeout(() => {
-  //     location.href = `${window.location.href}?sms=01`;
-  //   }, 2000);
-  // });
+// btn.addEventListener("click", () => {
+//   form.querySelectorAll("[data-email=info]").forEach((input) => {
+//     payload[input.name] = input.value;
+//   });
+//   btn.href = `mailto:hola@michgonzalez.com?subject=Mail%20from%20${payload.name},%20${payload.email}&body=name:%20${payload.name}%0D%0Aemail:%20${payload.email}%0D%0A%0D%0A${payload.message}%0D%0A%0D%0A`;
+//   setTimeout(() => {
+//     location.href = `${window.location.href}?sms=01`;
+//   }, 2000);
+// });
 
-}
+//}
 
 if (sms) {
   console.log("modal");
@@ -447,13 +443,3 @@ function faderMachine(faderClass) {
   });
 }
 
-// function dobbleOpen() {
-//   const closeEyes = document.getElementById("close-eyes");
-//   const openEyes = document.getElementById("eyes");
-//   setTimeout(() => {
-//     closeEyes.classList = "eyes";
-//     openEyes.classList = "eyes";
-//     closeEyes.classList.add("hide");
-//     openEyes.classList.add("active");
-//   }, 200);
-// }
