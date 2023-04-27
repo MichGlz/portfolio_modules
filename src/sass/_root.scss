@@ -1,14 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&family=Modak&family=Sigmar&family=Slackey&display=swap");
 
 :root {
   --font-name: "Roboto", sans-serif;
   --font-headlines: "Quicksand", sans-serif;
   --font-body: Arial, Helvetica, sans-serif;
+  --font-button: "Modak", cursive;
   --body-color: #2d2926;
   --orange: #f2aa4c;
   --color-1: #cbce91;
   --color-2: #76528b;
+  --color-3: #f24c4c;
+
+  // font-family: 'Londrina Solid', cursive;
+  // font-family: 'Modak', cursive;
+  // font-family: 'Sigmar', cursive;
+  // font-family: 'Slackey', cursive;
 
   // --orange: var(--color-1);
   // --body-color: var(--color-2);

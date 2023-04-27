@@ -186,9 +186,11 @@ h2 {
   justify-content: center;
   align-items: center;
   padding: calc(2rem + calc(6vw * var(--factor))) 1rem;
+  overflow: hidden;
 }
 
 .quote-container {
+  --button-width: min(40vw, 200px);
   padding: 2.5rem calc(5vw * var(--factor));
   border: solid 2px var(--body-color);
   border-radius: var(--border-radius);
@@ -202,6 +204,9 @@ h2 {
   background: var(--background-color-40);
   backdrop-filter: blur(2.3px);
   -webkit-backdrop-filter: blur(2.3px);
+  h2 {
+    font-weight: 300;
+  }
 }
 
 .quote-container p {
@@ -216,6 +221,111 @@ h2 {
 
 * > p + p {
   margin-top: 2rem;
+}
+
+p:is(.info-text-desktop, .info-text-mobile) {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% + calc(0.5 * var(--button-width)));
+  min-width: 45ch;
+  max-width: 55ch;
+  padding: 1.5rem;
+  background-color: var(--body-color);
+  color: var(--background-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: left;
+  letter-spacing: 0.05rem;
+  word-spacing: 0.3rem;
+  border-radius: 0.5rem;
+  transform: translate(50%, 0);
+  opacity: 0;
+  transition: transform 0.2s, opacity 0.2s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 3%;
+    min-width: 1rem;
+    aspect-ratio: 1;
+    top: 50%;
+    left: -3%;
+    background-color: var(--body-color);
+    transform: translate(50%, 0) rotate(45deg);
+  }
+
+  @media screen and (max-width: 1140px) {
+    &.info-text-mobile {
+      transform: translate(0, 30%);
+      width: 110%;
+      min-width: unset;
+      max-width: 57ch;
+      left: -5%;
+      bottom: 0;
+      padding: 1rem;
+      opacity: 1;
+      font-size: 1rem;
+      font-weight: 300;
+
+      &::before {
+        top: -3%;
+        left: 47%;
+        transform: translate(0, 0) rotate(45deg);
+      }
+    }
+  }
+}
+
+.pyt_button {
+  display: block;
+  margin: 0 auto;
+  width: var(--button-width);
+  aspect-ratio: 1;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  svg {
+    transition: 0.1s;
+    filter: drop-shadow(0 0 2rem rgba(0, 0, 0, 0.605));
+    text {
+      font-family: var(--font-button);
+      font-size: 1.8rem;
+      fill: white;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 3px rgb(0, 0, 0);
+    }
+    .circle {
+      fill: var(--color-3);
+    }
+  }
+  &:hover svg {
+    transform: scale(0.95);
+    filter: drop-shadow(0 0 2.1rem rgba(0, 0, 0, 0.75));
+  }
+
+  &:active svg {
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 2.2rem rgba(0, 0, 0, 0.9));
+  }
+
+  &:focus ~ .info-text-mobile {
+    opacity: 0;
+  }
+
+  @media screen and (min-width: 1140px) {
+    &:not(:focus):hover + .info-text-desktop {
+      //display: block;
+      transform: translate(0, -10%);
+      opacity: 1;
+    }
+  }
+
+  // &:not(:focus):hover + .info-text-desktop {
+  //   //display: block;
+  //   transform: translate(0, -10%);
+  //   opacity: 1;
+  // }
 }
 
 .sliding-sections-container {

@@ -4,6 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="msapplication-TileImage" content="image_url" />
+
+    <meta property="og:site_name" content="Mich Gonzalez" />
+    <meta property="og:title" content="It is my personal portfolio" />
+    <meta
+      property="og:description"
+      content="You can find some of my projects, an about me page and play with the bubbles"
+    />
+
+    <meta
+      property="og:image"
+      itemprop="image"
+      content="/assets/portfolio.jpg"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/jpg" />
+
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+
+    <meta property="og:url" content="your_website_url_here" />
     <title>Mich Gonzalez</title>
     <link rel="icon" type="image/svg+xml" href="/assets/mini_face.svg" />
     <link rel="stylesheet" href="./css/style.css" />
@@ -58,11 +81,65 @@
           </section>
           <section id="quote">
             <div class="quote-container">
-              <p>
+              <!-- <p>
                 Coding sometimes causes frustration, which can be triggered as
                 easily as bursting a bubble.
               </p>
-              <p>Just remember how fun it is to play with them.</p>
+              <p>Just remember how fun it is to play with them.</p> -->
+              <h2>"pyt med det"</h2>
+              <button class="pyt_button">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="light">
+                      <stop offset="0%" stop-color="#fff" stop-opacity="0.7" />
+                      <stop offset="50%" stop-color="#fff" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="shadow" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#000" stop-opacity="0.3" />
+                      <stop offset="50%" stop-color="#000" stop-opacity="0" />
+                    </linearGradient>
+                    <filter id="shadow-filter">
+                      <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+                      <feOffset dx="0" dy="2" />
+                      <feMerge>
+                        <feMergeNode />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <circle
+                    class="circle"
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    fill="#ff4c4c"
+                    filter="url(#shadow-filter)"
+                  />
+                  <circle cx="50" cy="50" r="35" fill="url(#light)" />
+                  <text
+                    x="50"
+                    y="57"
+                    font-size="25"
+                    font-family="Arial"
+                    text-anchor="middle"
+                    fill="#fff"
+                  >
+                    pyt
+                  </text>
+                </svg>
+              </button>
+              <p class="info-text-desktop">
+                "Pyt med det" is the perfect phrase for anyone who want to live
+                a stress-free life. It's like saying "Don't worry, be happy,"
+                but with a Scandinavian twist. Think of it as the Danish
+                equivalent of "Hakuna Matata" from The Lion King. So next time
+                you're feeling frazzled, just take a deep breath, channel your
+                inner Viking, and say "Pyt med det!" Who knows, it might just
+                become your new life motto.
+              </p>
+              <p class="info-text-mobile">
+                "Pyt med det" is the Danish equivalent of "Hakuna Matata"
+              </p>
             </div>
           </section>
         </div>
@@ -342,16 +419,10 @@
         <div class="btn-close invert"></div>
       </div>
       <section class="contact sliding-section">
-        <!-- <form
+        <form
           action="mailto:hola@michgonzalez.com?subject=Mail%20from%20michgonzalez.com"
           method="post"
           enctype="text/plain"
-          autocomplete="on"
-          id="form-email"
-        > -->
-        <form
-          action="contact.php"
-          method="POST"
           autocomplete="on"
           id="form-email"
         >

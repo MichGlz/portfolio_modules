@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&family=Modak&family=Sigmar&family=Slackey&display=swap");
 :root {
   --font-name: "Roboto", sans-serif;
   --font-headlines: "Quicksand", sans-serif;
   --font-body: Arial, Helvetica, sans-serif;
+  --font-button: "Modak", cursive;
   --body-color: #2d2926;
   --orange: #f2aa4c;
   --color-1: #cbce91;
   --color-2: #76528b;
+  --color-3: #f24c4c;
   --background-color: #fff;
   --background-color-80: #ffffffcc;
   --background-color-40: #ffffff66;
@@ -234,9 +237,11 @@ h2 {
   justify-content: center;
   align-items: center;
   padding: calc(2rem + 6vw * var(--factor)) 1rem;
+  overflow: hidden;
 }
 
 .quote-container {
+  --button-width: min(40vw, 200px);
   padding: 2.5rem calc(5vw * var(--factor));
   border: solid 2px var(--body-color);
   border-radius: var(--border-radius);
@@ -247,6 +252,9 @@ h2 {
   background: var(--background-color-40);
   backdrop-filter: blur(2.3px);
   -webkit-backdrop-filter: blur(2.3px);
+}
+.quote-container h2 {
+  font-weight: 300;
 }
 
 .quote-container p {
@@ -261,6 +269,97 @@ h2 {
 
 * > p + p {
   margin-top: 2rem;
+}
+
+p:is(.info-text-desktop, .info-text-mobile) {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% + 0.5 * var(--button-width));
+  min-width: 45ch;
+  max-width: 55ch;
+  padding: 1.5rem;
+  background-color: var(--body-color);
+  color: var(--background-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: left;
+  letter-spacing: 0.05rem;
+  word-spacing: 0.3rem;
+  border-radius: 0.5rem;
+  transform: translate(50%, 0);
+  opacity: 0;
+  transition: transform 0.2s, opacity 0.2s;
+}
+p:is(.info-text-desktop, .info-text-mobile)::before {
+  content: "";
+  position: absolute;
+  width: 3%;
+  min-width: 1rem;
+  aspect-ratio: 1;
+  top: 50%;
+  left: -3%;
+  background-color: var(--body-color);
+  transform: translate(50%, 0) rotate(45deg);
+}
+@media screen and (max-width: 1140px) {
+  p:is(.info-text-desktop, .info-text-mobile).info-text-mobile {
+    transform: translate(0, 30%);
+    width: 110%;
+    min-width: unset;
+    max-width: 57ch;
+    left: -5%;
+    bottom: 0;
+    padding: 1rem;
+    opacity: 1;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  p:is(.info-text-desktop, .info-text-mobile).info-text-mobile::before {
+    top: -3%;
+    left: 47%;
+    transform: translate(0, 0) rotate(45deg);
+  }
+}
+
+.pyt_button {
+  display: block;
+  margin: 0 auto;
+  width: var(--button-width);
+  aspect-ratio: 1;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.pyt_button svg {
+  transition: 0.1s;
+  filter: drop-shadow(0 0 2rem rgba(0, 0, 0, 0.605));
+}
+.pyt_button svg text {
+  font-family: var(--font-button);
+  font-size: 1.8rem;
+  fill: white;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+.pyt_button svg .circle {
+  fill: var(--color-3);
+}
+.pyt_button:hover svg {
+  transform: scale(0.95);
+  filter: drop-shadow(0 0 2.1rem rgba(0, 0, 0, 0.75));
+}
+.pyt_button:active svg {
+  transform: scale(0.9);
+  filter: drop-shadow(0 0 2.2rem rgba(0, 0, 0, 0.9));
+}
+.pyt_button:focus ~ .info-text-mobile {
+  opacity: 0;
+}
+@media screen and (min-width: 1140px) {
+  .pyt_button:not(:focus):hover + .info-text-desktop {
+    transform: translate(0, -10%);
+    opacity: 1;
+  }
 }
 
 .sliding-sections-container {

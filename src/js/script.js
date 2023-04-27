@@ -284,13 +284,34 @@ function callSection(e) {
   const slidingAnimation = slidingSection.animate(keyframes, properties);
 }
 
+// function fetchProject() {
+//   fetch("https://reicpe-9cc2.restdb.io/rest/projects?q={}&sort=position&dir=1", {
+//     method: "GET",
+//     headers: {
+//       "x-apikey": "606d5dcef5535004310074f4",
+//       //"x-apikey": API_KEY,
+//     },
+//   })
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log(data);
+//       document.querySelector(".projects-container .loading-modal").remove();
+//       data.forEach((p, i, arr) => {
+//         displayProject(p);
+
+//         if (i + 1 === arr.length) {
+//           faderMachine(".project-card");
+//         }
+//       });
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//     });
+// }
+
 function fetchProject() {
-  fetch("https://reicpe-9cc2.restdb.io/rest/projects?q={}&sort=position&dir=1", {
+  fetch("datafrom.php", {
     method: "GET",
-    headers: {
-      "x-apikey": "606d5dcef5535004310074f4",
-      //"x-apikey": API_KEY,
-    },
   })
     .then((res) => res.json())
     .then((data) => {
@@ -401,21 +422,7 @@ if (sms) {
     bubbleFactory(bubblesContainer);
   }
 
-  // setTimeout(() => {
-  //   const modal = document.querySelector(".thanks");
-  //   modal.addEventListener("animationend", () => {
 
-  //     const nextURL = window.location.href.split("?")[0];
-  //     const nextTitle = "Mich Gonzalez";
-  //     const nextState = { additionalInformation: "Updated the URL with JS" };
-
-  //     // This will replace the current entry in the browser's history, without reloading
-  //     window.history.replaceState(nextState, nextTitle, nextURL);
-
-  //     modal.remove();
-  //   });
-  //   modal.classList.add("banish");
-  // }, 1500);
 }
 
 const appearOptions = {
@@ -446,13 +453,4 @@ function faderMachine(faderClass) {
   });
 }
 
-// function dobbleOpen() {
-//   const closeEyes = document.getElementById("close-eyes");
-//   const openEyes = document.getElementById("eyes");
-//   setTimeout(() => {
-//     closeEyes.classList = "eyes";
-//     openEyes.classList = "eyes";
-//     closeEyes.classList.add("hide");
-//     openEyes.classList.add("active");
-//   }, 200);
-// }
+
