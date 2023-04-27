@@ -284,30 +284,7 @@ function callSection(e) {
   const slidingAnimation = slidingSection.animate(keyframes, properties);
 }
 
-// function fetchProject() {
-//   fetch("https://reicpe-9cc2.restdb.io/rest/projects?q={}&sort=position&dir=1", {
-//     method: "GET",
-//     headers: {
-//       "x-apikey": "606d5dcef5535004310074f4",
-//       //"x-apikey": API_KEY,
-//     },
-//   })
-//     .then((res) => res.json())
-//     .then((data) => {
-//       console.log(data);
-//       document.querySelector(".projects-container .loading-modal").remove();
-//       data.forEach((p, i, arr) => {
-//         displayProject(p);
 
-//         if (i + 1 === arr.length) {
-//           faderMachine(".project-card");
-//         }
-//       });
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//     });
-// }
 
 function fetchProject() {
   fetch("datafrom.php", {
