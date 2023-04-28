@@ -44,6 +44,7 @@ const bubbleSettings = {
 
 const body = document.querySelector("body");
 const orangeToggle = document.querySelector("#orange-mode");
+const pytButton = document.querySelector(".pyt_button");
 
 if (!checkIsMobile()) {
   body.addEventListener("mousedown", closeEyes);
@@ -67,6 +68,16 @@ orangeToggle.addEventListener("click", () => {
     root.style.setProperty("--background-color-40", "#f2aa4c66");
     root.style.setProperty("--background-gradient", "radial-gradient(circle, rgba(242, 170, 76, 1) 56%, rgba(163, 118, 59, 1) 100%)");
   }
+});
+
+pytButton.addEventListener("click", () => {
+  const bubblesContainer = document.querySelector(".bubbles-container");
+  const infoText = document.querySelectorAll(`[class*="info-text"]`);
+  infoText.forEach((text) => { text.classList.add("readed"); });
+  while (document.querySelectorAll(".bubble-sprit").length < 20) {
+    bubbleFactory(bubblesContainer);
+  }
+
 });
 
 function scrollingChanges(e) {
