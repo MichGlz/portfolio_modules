@@ -49,6 +49,7 @@ section {
 
 #principal {
   position: relative;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -104,7 +105,7 @@ section {
   border: solid 2px var(--body-color);
   /* background-color: var(--background-color); */
   background-color: transparent;
-  transition: 0.2s;
+  transition: 0.2s, transform 0.1s;
   cursor: pointer;
   border-radius: var(--border-radius);
   font-family: var(--font-name);
@@ -128,14 +129,41 @@ section {
   margin-top: 2rem;
 }
 
+// .box:hover {
+//   position: relative;
+//   transform: scale(1);
+//   box-shadow: inset 0 0 2px 1px var(--body-color);
+//   border: solid 3px var(--body-color);
+//   z-index: 2;
+//   background-color: var(--body-color);
+//   color: var(--background-color);
+// }
+
 .box:hover {
-  position: relative;
-  transform: scale(1);
-  box-shadow: inset 0 0 2px 1px var(--body-color);
-  border: solid 3px var(--body-color);
-  z-index: 2;
-  background-color: var(--body-color);
-  color: var(--background-color);
+  font-family: var(--font-button);
+  color: #fff;
+  letter-spacing: 2px;
+  border-radius: calc(2 * var(--border-radius));
+  border: none;
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+  background-color: var(--color-4);
+  filter: drop-shadow(0 0 2rem rgba(0, 0, 0, 0.605));
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    width: 90%;
+    height: 80%;
+    border-radius: var(--border-radius);
+    background: linear-gradient(135deg, #ffffff9e, transparent 50%);
+  }
+}
+
+.box:active {
+  transform: scale(0.95);
+  filter: drop-shadow(0 0 2.2rem rgba(0, 0, 0, 0.9));
 }
 
 h2 {
@@ -205,7 +233,8 @@ h2 {
   backdrop-filter: blur(2.3px);
   -webkit-backdrop-filter: blur(2.3px);
   h2 {
-    font-weight: 300;
+    font-size: 250%;
+    font-weight: 500;
   }
 }
 
@@ -964,4 +993,62 @@ section > .btn-close:hover,
   .on-mobile-No {
     display: none;
   }
+}
+#circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+.quarter {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transition: background-color 0.2s ease-in-out;
+}
+.quarter:hover {
+  background-color: pink;
+  transform: translate(var(--x), var(--y));
+}
+.quarter1 {
+  --x: -5%;
+  --y: -5%;
+  top: 0;
+  left: 0;
+  background-color: red;
+  border-radius: 100% 0 0 0;
+}
+.quarter2 {
+  --x: 5%;
+  --y: -5%;
+  top: 0;
+  right: 0;
+  background-color: blue;
+  border-radius: 0 100% 0 0;
+}
+.quarter3 {
+  --x: -5%;
+  --y: 5%;
+  bottom: 0;
+  left: 0;
+  background-color: orange;
+  border-radius: 0 0 0 100%;
+}
+.quarter4 {
+  --x: 5%;
+  --y: 5%;
+  bottom: 0;
+  right: 0;
+  background-color: green;
+  border-radius: 0 0 100% 0;
+}
+.cutout {
+  width: 50%;
+  height: 50%;
+  background-color: rgb(236, 28, 28);
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  border-radius: 50%;
+  pointer-events: none;
 }

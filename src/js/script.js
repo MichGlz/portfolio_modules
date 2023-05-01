@@ -74,7 +74,7 @@ pytButton.addEventListener("click", () => {
   const bubblesContainer = document.querySelector(".bubbles-container");
   const infoText = document.querySelectorAll(`[class*="info-text"]`);
   infoText.forEach((text) => { text.classList.add("readed"); });
-  while (document.querySelectorAll(".bubble-sprit").length < 20) {
+  while (document.querySelectorAll(".bubble-sprit").length < 50) {
     bubbleFactory(bubblesContainer);
   }
 
