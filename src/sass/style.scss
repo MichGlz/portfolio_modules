@@ -303,6 +303,19 @@ p:is(.info-text-desktop, .info-text-mobile) {
       }
     }
   }
+
+  .button-close_info {
+    display: block;
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--color-3);
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 0.25rem;
+  }
 }
 
 .pyt_button {
@@ -993,62 +1006,4 @@ section > .btn-close:hover,
   .on-mobile-No {
     display: none;
   }
-}
-#circle {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-}
-.quarter {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  transition: background-color 0.2s ease-in-out;
-}
-.quarter:hover {
-  background-color: pink;
-  transform: translate(var(--x), var(--y));
-}
-.quarter1 {
-  --x: -5%;
-  --y: -5%;
-  top: 0;
-  left: 0;
-  background-color: red;
-  border-radius: 100% 0 0 0;
-}
-.quarter2 {
-  --x: 5%;
-  --y: -5%;
-  top: 0;
-  right: 0;
-  background-color: blue;
-  border-radius: 0 100% 0 0;
-}
-.quarter3 {
-  --x: -5%;
-  --y: 5%;
-  bottom: 0;
-  left: 0;
-  background-color: orange;
-  border-radius: 0 0 0 100%;
-}
-.quarter4 {
-  --x: 5%;
-  --y: 5%;
-  bottom: 0;
-  right: 0;
-  background-color: green;
-  border-radius: 0 0 100% 0;
-}
-.cutout {
-  width: 50%;
-  height: 50%;
-  background-color: rgb(236, 28, 28);
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  border-radius: 50%;
-  pointer-events: none;
 }
