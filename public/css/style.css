@@ -307,6 +307,7 @@ p:is(.info-text-desktop, .info-text-mobile) {
   word-spacing: 0.3rem;
   border-radius: 0.5rem;
   transform: translate(50%, 0);
+  display: none;
   opacity: 0;
   transition: transform 0.2s, opacity 0.2s;
 }
@@ -321,8 +322,15 @@ p:is(.info-text-desktop, .info-text-mobile)::before {
   background-color: var(--body-color);
   transform: translate(50%, 0) rotate(45deg);
 }
+p:is(.info-text-desktop, .info-text-mobile).info-text-desktop {
+  display: block;
+}
 @media screen and (max-width: 1140px) {
+  p:is(.info-text-desktop, .info-text-mobile).info-text-desktop {
+    display: none;
+  }
   p:is(.info-text-desktop, .info-text-mobile).info-text-mobile {
+    display: block;
     transform: translate(0, 30%);
     width: 110%;
     min-width: unset;
@@ -340,7 +348,8 @@ p:is(.info-text-desktop, .info-text-mobile)::before {
     transform: translate(0, 0) rotate(45deg);
   }
 }
-p:is(.info-text-desktop, .info-text-mobile) .button-close_info {
+
+.button-close_info {
   display: block;
   position: absolute;
   top: 0.25rem;
@@ -351,6 +360,16 @@ p:is(.info-text-desktop, .info-text-mobile) .button-close_info {
   text-align: center;
   border-radius: 50%;
   padding-top: 0.25rem;
+  cursor: pointer;
+  pointer-events: all;
+  transform: scale(1);
+  transition: background-color 0.2s, transform 0.2s;
+}
+.button-close_info:hover {
+  background-color: var(--color-2);
+}
+.button-close_info:active {
+  transform: scale(0.9);
 }
 
 .pyt_button {
@@ -361,6 +380,13 @@ p:is(.info-text-desktop, .info-text-mobile) .button-close_info {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  /*@media screen and (min-width: 1140px) {
+    &:not(:focus):hover + .info-text-desktop {
+      //display: block;
+      transform: translate(0, -10%);
+      opacity: 1;
+    }
+  }*/
 }
 .pyt_button svg {
   transition: 0.1s;
@@ -386,12 +412,6 @@ p:is(.info-text-desktop, .info-text-mobile) .button-close_info {
 }
 .pyt_button:focus ~ .info-text-mobile {
   opacity: 0;
-}
-@media screen and (min-width: 1140px) {
-  .pyt_button:not(:focus):hover + .info-text-desktop {
-    transform: translate(0, -10%);
-    opacity: 1;
-  }
 }
 
 .sliding-sections-container {

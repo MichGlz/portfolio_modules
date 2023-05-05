@@ -17,6 +17,17 @@ function startWeb(e) {
   });
   windowWidth(root);
   fetchFace();
+  console.log(`.info-text-${checkIsMobile() ? "mobile" : "desktop"}`);
+  !checkIsMobile() && faderMachine(`.info-text-desktop`);
+
+  const infoCloseBtn = document.querySelector(`.info-text-${checkIsMobile() ? "mobile" : "desktop"}> .button-close_info`);
+  const infoText = document.querySelector(`.info-text-${checkIsMobile() ? "mobile" : "desktop"}`);
+  infoCloseBtn.addEventListener("click", () => {
+    console.log("click");
+    infoText.style.transform = "translate(50%, 0)";
+    infoText.style.opacity = "0";
+
+  });
 }
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -295,8 +306,6 @@ function callSection(e) {
   const slidingAnimation = slidingSection.animate(keyframes, properties);
 }
 
-
-
 function fetchProject() {
   fetch("datafrom.php", {
     method: "GET",
@@ -427,8 +436,20 @@ const appearOnScroll = new IntersectionObserver(function (entries, appearOnScrol
       if (spinner) {
         spinner.remove();
       }
-      entry.target.classList.add("appear");
-      appearOnScroll.unobserve(entry.target);
+      if (entry.target.classList.contains("info-text-desktop")) {
+
+        setTimeout(() => {
+          entry.target.style.transform = "translate(0, -10%)";
+          entry.target.style.opacity = "1";
+        }, 200);
+        console.log("info-text-desktop");
+        appearOnScroll.unobserve(entry.target);
+
+      } else {
+        entry.target.classList.add("appear");
+        appearOnScroll.unobserve(entry.target);
+      }
+
     }
   });
 }, appearOptions);
