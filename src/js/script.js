@@ -307,7 +307,7 @@ function callSection(e) {
 }
 
 function fetchProject() {
-  fetch("datafrom.php", {
+  fetch("https://michgonzalez.com/datafrom.php", {
     method: "GET",
   })
     .then((res) => res.json())
