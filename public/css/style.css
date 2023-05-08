@@ -1040,7 +1040,7 @@ section > .btn-close:hover,
   .on-mobile-No #bubble-counter {
     visibility: visible;
     border-radius: 50%;
-    background-image: url("./assets/bubble2.svg");
+    background-image: url("../assets/bubble2.svg");
     font-size: 1rem;
     position: fixed;
     top: 0;
