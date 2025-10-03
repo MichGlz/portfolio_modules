@@ -312,18 +312,17 @@ function fetchProject() {
   // TODO: Replace hardcoded URLs with environment variables
   // ENV variables needed: API_BASE_URL, LOCALHOST_API_URL, NETLIFY_FUNCTIONS_URL
   const url = window.location.href;
-  let fetchurl = `${url}/datafrom.php`; // ENV: API_BASE_URL
+  let fetchurl = `${url}/datafrom.php`;
   let options = {
     method: "GET",
   };
 
   if (url.includes("localhost")) {
-    fetchurl = `http://localhost:5500/datafrom.php`; // ENV: LOCALHOST_API_URL
+    fetchurl = `http://localhost:5500/datafrom.php`;
   }
 
   if (url.includes(".netlify.app")) {
-    fetchurl = import.meta.env.FETCH_URL; // ENV: NETLIFY_FUNCTIONS_URL - Define this variable
-    options.headers["x-apikey"] = import.meta.env.FETCH_API_KEY; // ENV: API_KEY - Define this variable
+    // ENV: API_KEY - Define this variable
   }
 
   fetch(fetchurl, options)
