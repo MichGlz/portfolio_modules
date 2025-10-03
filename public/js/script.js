@@ -146,7 +146,9 @@ function bubbleFactory(container) {
     bubbleSprit.classList.add(`bubble-sprit`);
     bubbleSprit.classList.add(`bubble-${bubbleNumber}`);
 
-    fetch("./assets/bubble2.svg")
+    // TODO: Consider using environment variable for asset base path
+    // ENV: ASSETS_BASE_PATH for consistent asset loading
+    fetch("./assets/bubble2.svg") // ENV: Could use ASSETS_BASE_PATH + "/bubble2.svg"
       .then(function (res) {
         return res.text();
       })
@@ -307,9 +309,24 @@ function callSection(e) {
 }
 
 function fetchProject() {
-  fetch("https://michgonzalez.com/datafrom.php", {
+  // TODO: Replace hardcoded URLs with environment variables
+  // ENV variables needed: API_BASE_URL, LOCALHOST_API_URL, NETLIFY_FUNCTIONS_URL
+  const url = window.location.href;
+  let fetchurl = `${url}/datafrom.php`; // ENV: API_BASE_URL
+  let options = {
     method: "GET",
-  })
+  };
+
+  if (url.includes("localhost")) {
+    fetchurl = `http://localhost:5500/datafrom.php`; // ENV: LOCALHOST_API_URL
+  }
+
+  if (url.includes(".netlify.app")) {
+    fetchurl = import.meta.env.FETCH_URL; // ENV: NETLIFY_FUNCTIONS_URL - Define this variable
+    options.headers["x-apikey"] = import.meta.env.FETCH_API_KEY; // ENV: API_KEY - Define this variable
+  }
+
+  fetch(fetchurl, options)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
