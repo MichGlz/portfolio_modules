@@ -2,6 +2,7 @@
 node_modules/
 public/datafrom.php
 public/contact.php
+public/.env
 package-lock.json
 
 
